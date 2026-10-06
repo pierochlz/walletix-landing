@@ -205,21 +205,14 @@
               controlar tus egresos y alcanzar tus metas de ahorro, sin importar si eres estudiante dando tus primeros pasos o un profesional en crecimiento.
             </p>
 
-            <!-- Botones de Acción (CTA) -->
-            <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
-              <a href="#registro" class="w-full sm:w-auto px-8 py-4 rounded-full bg-white text-brand-darkest font-bold text-base hover:bg-brand-green hover:shadow-glow-green transition-all duration-300 flex items-center justify-center gap-2 group shadow-lg">
-                <span>Regístrate Ahora</span>
-                <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <!-- Botón de Acción Principal (Figma Oficial: Regístrate) -->
+            <div class="flex justify-center lg:justify-start pt-2">
+              <a href="#registro" class="px-9 py-4 rounded-full bg-white text-brand-darkest font-bold text-base hover:bg-brand-green hover:shadow-glow-green transition-all duration-300 inline-flex items-center justify-center gap-2 group shadow-xl">
+                <span>Regístrate</span>
+                <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
                 </svg>
               </a>
-
-              <button onclick="openModal('demo')" class="w-full sm:w-auto px-7 py-4 rounded-full bg-brand-surface/90 hover:bg-brand-card text-white font-semibold text-base border border-white/15 hover:border-brand-green/40 transition-all duration-300 flex items-center justify-center gap-2 group">
-                <svg class="w-5 h-5 text-brand-green group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M8 5v14l11-7z"/>
-                </svg>
-                <span>Ver Demo Interactiva</span>
-              </button>
             </div>
 
             <!-- Micro-confianza / Estadísticas rápidas -->
@@ -251,23 +244,24 @@
                 <div class="absolute -top-12 -right-12 w-44 h-44 bg-brand-green/20 rounded-full blur-2xl"></div>
                 
                 <!-- Emblema circular Walletix Oficial -->
-                <div class="w-48 h-48 sm:w-56 sm:h-56 mx-auto rounded-full bg-white p-4 shadow-2xl flex flex-col items-center justify-center relative z-10 transition-transform hover:scale-105 duration-300">
-                  <div class="relative w-28 h-24 mb-2">
+                <div class="w-48 h-48 sm:w-56 sm:h-56 mx-auto rounded-full bg-white p-5 shadow-2xl flex flex-col items-center justify-center relative z-10 transition-transform hover:scale-105 duration-300">
+                  <div class="relative w-28 h-24 mb-1 flex items-center justify-center">
                     <!-- Icono Cartera con flecha verde ascendente -->
-                    <svg viewBox="0 0 100 85" class="w-full h-full drop-shadow">
-                      <!-- Billetera azul marino -->
-                      <rect x="5" y="22" width="85" height="58" rx="14" fill="#1E293B"/>
-                      <rect x="55" y="38" width="38" height="26" rx="6" fill="#0F172A" stroke="#334155" stroke-width="2"/>
-                      <circle cx="68" cy="51" r="3.5" fill="#FFFFFF"/>
-                      <!-- Flecha verde saliendo de la cartera -->
-                      <path d="M22 28 C 30 10, 52 14, 72 4" stroke="#22C55E" stroke-width="8" stroke-linecap="round" fill="none"/>
-                      <path d="M60 4 L74 4 L74 18" fill="#22C55E"/>
+                    <svg viewBox="0 0 120 100" class="w-full h-full drop-shadow-md">
+                      <!-- Flecha verde ascendente que sale de la cartera -->
+                      <path d="M 40 46 C 48 24, 65 18, 86 12" stroke="#22C55E" stroke-width="7" stroke-linecap="round" fill="none"/>
+                      <polygon points="76,8 94,10 90,26" fill="#22C55E"/>
+                      <!-- Cuerpo de billetera azul marino -->
+                      <rect x="15" y="30" width="90" height="58" rx="14" fill="#1E293B"/>
+                      <!-- Solapa / broche con relieve -->
+                      <path d="M 64 48 h 41 v 22 h -41 a 6 6 0 0 1 -6 -6 v -10 a 6 6 0 0 1 6 -6 z" fill="#0F172A" stroke="#334155" stroke-width="1.5"/>
+                      <circle cx="84" cy="59" r="3.5" fill="#FFFFFF"/>
                     </svg>
                   </div>
                   <span class="text-xl sm:text-2xl font-black tracking-widest text-[#0F172A]">WALLETIX</span>
                 </div>
 
-                <!-- Tarjeta Flotante Interactiva de Resumen (Overlay Mockup) -->
+                <!-- Tarjeta de Resumen Financiero Integrada y Limpia -->
                 <div class="mt-6 bg-brand-card/90 border border-white/10 rounded-2xl p-4 text-left shadow-lg backdrop-blur-md">
                   <div class="flex items-center justify-between text-xs text-slate-400 mb-1">
                     <span>Balance Consolidado (Marzo)</span>
@@ -286,12 +280,6 @@
                   <div class="w-full bg-slate-700/50 h-2 rounded-full mt-3 overflow-hidden">
                     <div class="bg-gradient-to-r from-brand-blue to-brand-green h-full rounded-full w-[98%]"></div>
                   </div>
-                </div>
-
-                <!-- Badge Flotante "Sin fugas de dinero" -->
-                <div class="absolute -bottom-3 -left-3 sm:-left-6 bg-brand-surface border border-brand-green/30 px-4 py-2 rounded-xl text-xs font-semibold text-white shadow-xl flex items-center gap-2">
-                  <span class="w-2.5 h-2.5 rounded-full bg-brand-green animate-pulse"></span>
-                  Gasto Hormiga: <span class="text-brand-danger font-bold">-S/ 120</span> controlado
                 </div>
 
               </div>
