@@ -99,34 +99,26 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-20">
         
-        <!-- Logo Brand: WALLETIX -->
+        <!-- Logo Brand: WALLETIX Oficial -->
         <a href="#inicio" class="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-brand-green/50 rounded-lg p-1">
-          <div class="w-10 h-10 rounded-xl bg-brand-surface border border-brand-green/30 flex items-center justify-center text-brand-green shadow-glow-green/20 group-hover:scale-105 transition-transform duration-300">
-            <!-- Isotipo Cartera + Flecha Crecimiento (Figma) -->
-            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/>
-              <path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/>
-              <path d="M18 12a2 2 0 0 0 0 4h4v-4Z"/>
-              <path d="m14 13 3-3m0 0 3 3m-3-3v6" stroke="#22C55E"/>
-            </svg>
-          </div>
-          <span class="text-2xl font-extrabold tracking-wider text-white">WALLETIX</span>
+          <img src="assets/walletix-logo.png" alt="Walletix Logo" class="w-10 h-10 rounded-full object-contain shadow-glow-green/20 group-hover:scale-105 transition-transform duration-300" />
+          <span class="text-2xl font-black tracking-wider text-white">WALLETIX</span>
         </a>
 
-        <!-- Desktop Navigation Links -->
-        <nav class="hidden md:flex items-center gap-1 lg:gap-2">
-          <a href="#inicio" class="px-4 py-2 text-sm font-medium text-white bg-white/10 rounded-full transition-colors hover:text-white">Inicio</a>
-          <a href="#funciones" class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-full transition-colors">Funciones</a>
-          <a href="#showcase" class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-full transition-colors">Dashboard</a>
-          <a href="#beneficios" class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-full transition-colors">Beneficios</a>
-          <a href="#contacto" class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-full transition-colors">Contacto</a>
+        <!-- Desktop Navigation Links (Figma Exact Structure) -->
+        <nav class="hidden md:flex items-center bg-[#131F33] rounded-full p-1.5 border border-white/10 text-xs font-semibold">
+          <a href="#inicio" class="px-5 py-2 text-white bg-white/20 rounded-full transition-colors">Inicio</a>
+          <a href="#funciones" class="px-5 py-2 text-slate-300 hover:text-white rounded-full transition-colors">Funciones</a>
+          <a href="#registro" class="px-5 py-2 text-slate-300 hover:text-white rounded-full transition-colors">Registrarse</a>
+          <a href="login.html" class="px-5 py-2 text-slate-300 hover:text-white rounded-full transition-colors">Iniciar Sesión</a>
+          <a href="#contacto" class="px-5 py-2 text-slate-300 hover:text-white rounded-full transition-colors">Cambiar contraseña</a>
         </nav>
 
         <!-- Header Actions: Iniciar Sesión / Registro -->
         <div class="hidden md:flex items-center gap-3">
-          <button onclick="openModal('login')" class="px-5 py-2.5 text-sm font-semibold text-slate-200 hover:text-white border border-white/10 hover:border-white/30 rounded-full transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white/20">
+          <a href="login.html" class="px-5 py-2.5 text-sm font-semibold text-slate-200 hover:text-white border border-white/10 hover:border-white/30 rounded-full transition-all duration-200">
             Iniciar Sesión
-          </button>
+          </a>
           <a href="#registro" class="px-5 py-2.5 text-sm font-bold text-brand-darkest bg-white hover:bg-brand-green hover:shadow-glow-green transition-all duration-300 rounded-full focus:outline-none focus:ring-2 focus:ring-brand-green">
             Regístrate Gratis
           </a>
@@ -156,9 +148,9 @@
       <a href="#contacto" onclick="closeMobileMenu()" class="block px-4 py-2.5 text-base font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-xl">Contacto</a>
       
       <div class="pt-4 border-t border-white/10 flex flex-col gap-3">
-        <button onclick="openModal('login'); closeMobileMenu();" class="w-full py-3 text-center text-sm font-semibold text-slate-200 border border-white/15 rounded-xl hover:bg-white/5">
+        <a href="login.html" onclick="closeMobileMenu()" class="w-full py-3 text-center text-sm font-semibold text-slate-200 border border-white/15 rounded-xl hover:bg-white/5 block">
           Iniciar Sesión
-        </button>
+        </a>
         <a href="#registro" onclick="closeMobileMenu()" class="w-full py-3 text-center text-sm font-bold text-brand-darkest bg-brand-green rounded-xl shadow-glow-green">
           Regístrate Gratis
         </a>
@@ -233,56 +225,17 @@
 
           </div>
 
-          <!-- Hero Graphic / Mockup Visual del Logo e Interfaz -->
-          <div class="lg:col-span-5 relative flex justify-center">
+          <!-- Hero Graphic / Mockup Visual del Logo Oficial (Figma Exacto) -->
+          <div class="lg:col-span-5 relative flex justify-center items-center">
             <!-- Contenedor con efecto Glow y animación flotante -->
-            <div class="w-full max-w-md relative animate-float">
+            <div class="w-full max-w-md relative animate-float flex justify-center">
               
-              <!-- Card Emblema Principal de Figma -->
-              <div class="glass-card rounded-3xl p-8 sm:p-10 text-center relative overflow-hidden shadow-2xl border border-white/15">
-                <!-- Luz ambiental interna -->
-                <div class="absolute -top-12 -right-12 w-44 h-44 bg-brand-green/20 rounded-full blur-2xl"></div>
-                
-                <!-- Emblema circular Walletix Oficial -->
-                <div class="w-48 h-48 sm:w-56 sm:h-56 mx-auto rounded-full bg-white p-5 shadow-2xl flex flex-col items-center justify-center relative z-10 transition-transform hover:scale-105 duration-300">
-                  <div class="relative w-28 h-24 mb-1 flex items-center justify-center">
-                    <!-- Icono Cartera con flecha verde ascendente -->
-                    <svg viewBox="0 0 120 100" class="w-full h-full drop-shadow-md">
-                      <!-- Flecha verde ascendente que sale de la cartera -->
-                      <path d="M 40 46 C 48 24, 65 18, 86 12" stroke="#22C55E" stroke-width="7" stroke-linecap="round" fill="none"/>
-                      <polygon points="76,8 94,10 90,26" fill="#22C55E"/>
-                      <!-- Cuerpo de billetera azul marino -->
-                      <rect x="15" y="30" width="90" height="58" rx="14" fill="#1E293B"/>
-                      <!-- Solapa / broche con relieve -->
-                      <path d="M 64 48 h 41 v 22 h -41 a 6 6 0 0 1 -6 -6 v -10 a 6 6 0 0 1 6 -6 z" fill="#0F172A" stroke="#334155" stroke-width="1.5"/>
-                      <circle cx="84" cy="59" r="3.5" fill="#FFFFFF"/>
-                    </svg>
-                  </div>
-                  <span class="text-xl sm:text-2xl font-black tracking-widest text-[#0F172A]">WALLETIX</span>
-                </div>
-
-                <!-- Tarjeta de Resumen Financiero Integrada y Limpia -->
-                <div class="mt-6 bg-brand-card/90 border border-white/10 rounded-2xl p-4 text-left shadow-lg backdrop-blur-md">
-                  <div class="flex items-center justify-between text-xs text-slate-400 mb-1">
-                    <span>Balance Consolidado (Marzo)</span>
-                    <span class="text-brand-green font-semibold flex items-center gap-1">
-                      <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
-                      </svg>
-                      +49.0% récord
-                    </span>
-                  </div>
-                  <div class="flex items-baseline justify-between">
-                    <span class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">S/ 2,450.00</span>
-                    <span class="text-xs bg-brand-green/15 text-brand-green px-2.5 py-1 rounded-full font-medium">Meta 98%</span>
-                  </div>
-                  <!-- Barra de progreso meta -->
-                  <div class="w-full bg-slate-700/50 h-2 rounded-full mt-3 overflow-hidden">
-                    <div class="bg-gradient-to-r from-brand-blue to-brand-green h-full rounded-full w-[98%]"></div>
-                  </div>
-                </div>
-
-              </div>
+              <!-- Imagen Oficial Exportada Directamente desde el Frame de Figma (Node 84:30) -->
+              <img 
+                src="assets/walletix-brand-card.png" 
+                alt="Walletix - Tarjeta Oficial de Marca" 
+                class="w-full max-w-[380px] sm:max-w-[420px] rounded-3xl drop-shadow-[0_25px_60px_rgba(0,0,0,0.6)] transition-transform duration-300 hover:scale-105 select-none"
+              />
 
             </div>
           </div>
@@ -1028,13 +981,7 @@
         <!-- Columna 1: Brand e Información General -->
         <div class="lg:col-span-2 space-y-4">
           <a href="#inicio" class="flex items-center gap-3">
-            <div class="w-8 h-8 rounded-lg bg-brand-surface border border-brand-green/40 flex items-center justify-center text-brand-green">
-              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/>
-                <path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/>
-                <path d="M18 12a2 2 0 0 0 0 4h4v-4Z"/>
-              </svg>
-            </div>
+            <img src="assets/walletix-logo.png" alt="Walletix Logo" class="w-9 h-9 rounded-full object-contain shadow-glow-green/20" />
             <span class="text-xl font-black tracking-wider text-white">WALLETIX</span>
           </a>
           <p class="text-xs text-slate-400 leading-relaxed max-w-sm">

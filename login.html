@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Walletix - Iniciar Sesión</title>
+  <meta name="description" content="Accede a tu cuenta de Walletix y gestiona tus finanzas personales de manera inteligente." />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/walletix-logo.svg" />
+
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              dark: '#0B1728',     // Fondo panel izquierdo exacto de Figma
+              header: '#0E1626',   // Navbar superior
+              blue: '#0284C7',     // Azul botón Iniciar Sesión Figma
+              blueHover: '#0369A1',
+              green: '#22C55E',    // Verde éxito ganar
+              inputBg: '#F1F5F9',  // Fondo gris claro inputs Figma
+            }
+          },
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-brand-header text-slate-100 font-sans min-h-screen flex flex-col antialiased selection:bg-brand-green selection:text-slate-900">
+
+  <!-- =========================================================================
+       NAVBAR SUPERIOR (EXACTO DEL FIGMA NODE 12:12)
+       ========================================================================= -->
+  <header class="w-full bg-[#0E1626] border-b border-white/5 py-4 px-6 lg:px-12 flex items-center justify-between">
+    <!-- Brand -->
+    <a href="index.html" class="flex items-center gap-3">
+      <img src="assets/walletix-logo.png" alt="Walletix Logo" class="w-8 h-8 rounded-full" />
+      <span class="text-2xl font-black tracking-widest text-white">WALLETIX</span>
+    </a>
+
+    <!-- Nav links cápsula del Figma -->
+    <nav class="hidden md:flex items-center bg-[#131F33] rounded-full p-1.5 border border-white/10 text-xs font-semibold">
+      <a href="index.html" class="px-5 py-2 text-slate-300 hover:text-white rounded-full transition-colors">Inicio</a>
+      <a href="index.html#funciones" class="px-5 py-2 text-slate-300 hover:text-white rounded-full transition-colors">Funciones</a>
+      <a href="index.html#registro" class="px-5 py-2 text-slate-300 hover:text-white rounded-full transition-colors">Registrarse</a>
+      <!-- Pestaña Activa en Figma: Iniciar Sesión con píldora blanca -->
+      <a href="login.html" class="px-5 py-2 bg-white text-slate-900 rounded-full font-bold shadow transition-all">Iniciar Sesión</a>
+      <a href="index.html#contacto" class="px-5 py-2 text-slate-300 hover:text-white rounded-full transition-colors">Cambiar contraseña</a>
+    </nav>
+
+    <!-- Botón Menú Móvil -->
+    <div class="md:hidden">
+      <a href="index.html" class="px-4 py-2 bg-white/10 text-white rounded-full text-xs font-semibold">Volver</a>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       CUERPO PRINCIPAL DIVIDIDO EN 2 COLUMNAS (FIGMA NODE 12:28)
+       ========================================================================= -->
+  <main class="flex-1 grid grid-cols-1 lg:grid-cols-12 min-h-[calc(100vh-73px)]">
+    
+    <!-- =======================================================================
+         PANEL IZQUIERDO (FIGMA: BRANDING, EMBLEMA & BENEFICIOS)
+         ======================================================================= -->
+    <section class="lg:col-span-5 bg-[#0C1929] p-8 sm:p-12 lg:p-16 flex flex-col justify-center items-center text-center relative overflow-hidden border-r border-white/5">
+      <!-- Glow sutil de fondo -->
+      <div class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-brand-green/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="max-w-md w-full space-y-8 relative z-10">
+        
+        <!-- Emblema Circular Oficial de Figma (Exacto) -->
+        <div class="w-52 h-52 sm:w-64 sm:h-64 mx-auto rounded-full bg-white p-4 shadow-2xl flex items-center justify-center transition-transform hover:scale-105 duration-300">
+          <img src="assets/walletix-logo.png" alt="Walletix Emblema Oficial" class="w-full h-full object-contain" />
+        </div>
+
+        <!-- Titular exacto de Figma: "Empieza a ahorrar, empieza a ganar" -->
+        <div class="space-y-3">
+          <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
+            “Empieza a <span class="underline decoration-white underline-offset-4">ahorrar</span>, empieza a <span class="text-brand-green italic">ganar</span>”
+          </h1>
+          <p class="text-sm text-slate-300 leading-relaxed font-normal">
+            Plataforma <span class="text-sky-400 font-semibold">financiera inteligente</span> diseñada para maximizar el rendimiento de tu capital diario.
+          </p>
+        </div>
+
+        <!-- Divisor sutil -->
+        <div class="w-full h-px bg-white/10 my-6"></div>
+
+        <!-- Lista de 3 Beneficios con checks verdes exactos de Figma -->
+        <div class="space-y-4 text-left max-w-sm mx-auto">
+          <div class="flex items-center gap-3">
+            <div class="w-6 h-6 rounded-full bg-brand-green/20 text-brand-green flex items-center justify-center shrink-0">
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span class="text-sm font-medium text-slate-200">Seguimiento inteligente en tiempo real</span>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <div class="w-6 h-6 rounded-full bg-brand-green/20 text-brand-green flex items-center justify-center shrink-0">
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span class="text-sm font-medium text-slate-200">Detección automática de gastos hormiga</span>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <div class="w-6 h-6 rounded-full bg-brand-green/20 text-brand-green flex items-center justify-center shrink-0">
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span class="text-sm font-medium text-slate-200">Cifrado y seguridad de grado bancario</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         PANEL DERECHO (FIGMA: FORMULARIO BLANCO LIMPIO)
+         ======================================================================= -->
+    <section class="lg:col-span-7 bg-white p-8 sm:p-12 lg:p-20 flex flex-col justify-center items-center text-slate-900">
+      <div class="max-w-md w-full space-y-8">
+        
+        <!-- Encabezado del Formulario -->
+        <div class="space-y-2">
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Iniciar Sesión</h2>
+          <p class="text-sm text-slate-600">
+            Bienvenido de vuelta, <span class="text-sky-600 font-medium">ingresa</span> tus <span class="text-sky-600 font-semibold">credenciales</span> para acceder.
+          </p>
+        </div>
+
+        <!-- Formulario -->
+        <form onsubmit="handleLogin(event)" class="space-y-6">
+          
+          <!-- Campo: Correo Electrónico -->
+          <div class="space-y-2">
+            <div class="flex items-center justify-between text-xs font-bold">
+              <label for="email" class="text-slate-800 uppercase tracking-wider">
+                CORREO ELECTRÓNICO <span class="text-rose-500">*</span>
+              </label>
+              <span class="text-sky-600 font-medium">Usa un correo activo</span>
+            </div>
+            <div class="relative">
+              <input 
+                type="email" 
+                id="email" 
+                required 
+                placeholder="ejemplo@correo.com"
+                value="alex.romero@walletix.pe"
+                class="w-full px-4 py-3.5 rounded-xl bg-slate-100 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all text-sm font-medium pr-10 border border-transparent focus:bg-white"
+              />
+              <span class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 font-bold">@</span>
+            </div>
+          </div>
+
+          <!-- Campo: Contraseña -->
+          <div class="space-y-2">
+            <div class="flex items-center justify-between text-xs font-bold">
+              <label for="password" class="text-slate-800 uppercase tracking-wider">
+                CONTRASEÑA <span class="text-rose-500">*</span>
+              </label>
+              <span class="text-slate-400 font-normal">Mínimo 8 caracteres</span>
+            </div>
+            <input 
+              type="password" 
+              id="password" 
+              required 
+              placeholder="Crea una contraseña segura"
+              value="demo123456"
+              class="w-full px-4 py-3.5 rounded-xl bg-slate-100 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all text-sm font-medium border border-transparent focus:bg-white"
+            />
+          </div>
+
+          <!-- Opciones adicionales -->
+          <div class="flex items-center justify-between text-xs font-medium pt-1">
+            <label class="flex items-center gap-2 cursor-pointer text-slate-700">
+              <input type="checkbox" checked class="w-4 h-4 rounded border-slate-300 text-sky-600 focus:ring-sky-500" />
+              <span>Recuérdame en este dispositivo</span>
+            </label>
+            <a href="index.html#contacto" class="text-sky-600 hover:text-sky-700 font-semibold transition-colors">
+              ¿Olvidaste tu contraseña?
+            </a>
+          </div>
+
+          <!-- Botón Azul Iniciar Sesión (Figma Exacto) -->
+          <button 
+            type="submit" 
+            id="loginBtn"
+            class="w-full py-4 rounded-xl bg-[#0284C7] hover:bg-[#0369A1] text-white font-bold text-base shadow-lg hover:shadow-xl transition-all duration-200">
+            Iniciar Sesión
+          </button>
+
+          <!-- Divisor "O CONTINÚA CON" -->
+          <div class="relative flex items-center justify-center my-6">
+            <div class="border-t border-slate-200 w-full"></div>
+            <span class="bg-white px-4 text-[11px] font-bold tracking-widest text-slate-400 uppercase relative">
+              O CONTINÚA CON
+            </span>
+          </div>
+
+          <!-- Botón Continuar con Google (Figma Exacto) -->
+          <button 
+            type="button" 
+            onclick="handleGoogleLogin()" 
+            class="w-full py-3.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold text-sm transition-all duration-200 flex items-center justify-center gap-3">
+            <!-- Icono Oficial Google G -->
+            <svg class="w-5 h-5" viewBox="0 0 24 24">
+              <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+              <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+              <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+              <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+            </svg>
+            <span>Continuar con Google</span>
+          </button>
+
+        </form>
+
+        <!-- Enlace a registro -->
+        <p class="text-center text-xs text-slate-500">
+          ¿No tienes una cuenta aún? 
+          <a href="index.html#registro" class="text-sky-600 hover:text-sky-700 font-bold">Regístrate gratis</a>
+        </p>
+
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    function handleLogin(e) {
+      e.preventDefault();
+      const btn = document.getElementById('loginBtn');
+      btn.innerHTML = `<span class="animate-spin mr-2">🔄</span> Iniciando sesión...`;
+      btn.disabled = true;
+
+      setTimeout(() => {
+        alert("¡Bienvenido, Alex Romero! Has iniciado sesión correctamente en Walletix.");
+        window.location.href = "index.html#showcase";
+      }, 700);
+    }
+
+    function handleGoogleLogin() {
+      alert("Autenticación con Google completada. Conectando con Walletix...");
+      window.location.href = "index.html#showcase";
+    }
+  </script>
+
+</body>
+</html>
