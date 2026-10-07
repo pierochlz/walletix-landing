@@ -105,13 +105,13 @@
           <span class="text-2xl font-black tracking-wider text-white">WALLETIX</span>
         </a>
 
-        <!-- Desktop Navigation Links -->
-        <nav class="hidden md:flex items-center bg-[#131F33] rounded-full p-1.5 border border-white/10 text-xs font-semibold">
-          <a href="#inicio" class="px-5 py-2 text-white bg-white/20 rounded-full transition-colors">Inicio</a>
-          <a href="#funciones" class="px-5 py-2 text-slate-300 hover:text-white rounded-full transition-colors">Funciones</a>
-          <a href="#showcase" class="px-5 py-2 text-slate-300 hover:text-white rounded-full transition-colors">Dashboard</a>
-          <a href="#beneficios" class="px-5 py-2 text-slate-300 hover:text-white rounded-full transition-colors">Beneficios</a>
-          <a href="#contacto" class="px-5 py-2 text-slate-300 hover:text-white rounded-full transition-colors">Atención al Usuario</a>
+        <!-- Desktop Navigation Links con Sombreado Interactivo -->
+        <nav id="desktopNav" class="hidden md:flex items-center bg-[#131F33] rounded-full p-1.5 border border-white/10 text-xs font-semibold">
+          <a href="#inicio" class="nav-pill px-5 py-2 text-white bg-white/20 rounded-full transition-all duration-200 hover:bg-white/15">Inicio</a>
+          <a href="#funciones" class="nav-pill px-5 py-2 text-slate-300 hover:text-white hover:bg-white/10 rounded-full transition-all duration-200">Funciones</a>
+          <a href="#showcase" class="nav-pill px-5 py-2 text-slate-300 hover:text-white hover:bg-white/10 rounded-full transition-all duration-200">Dashboard</a>
+          <a href="#beneficios" class="nav-pill px-5 py-2 text-slate-300 hover:text-white hover:bg-white/10 rounded-full transition-all duration-200">Beneficios</a>
+          <a href="#contacto" class="nav-pill px-5 py-2 text-slate-300 hover:text-white hover:bg-white/10 rounded-full transition-all duration-200">Atención al Usuario</a>
         </nav>
 
         <!-- Header Actions: Iniciar Sesión / Registro -->
@@ -1270,6 +1270,45 @@
       closeModal();
       window.location.hash = "showcase";
     }
+
+    // Control de Sombreado Activo en la Barra de Navegación (Click y Scroll)
+    const navPills = document.querySelectorAll('.nav-pill');
+
+    function setActivePill(targetLink) {
+      if (!targetLink) return;
+      navPills.forEach(pill => {
+        pill.classList.remove('bg-white/20', 'text-white', 'hover:bg-white/15');
+        pill.classList.add('text-slate-300', 'hover:bg-white/10');
+      });
+      targetLink.classList.remove('text-slate-300', 'hover:bg-white/10');
+      targetLink.classList.add('bg-white/20', 'text-white', 'hover:bg-white/15');
+    }
+
+    navPills.forEach(pill => {
+      pill.addEventListener('click', function() {
+        setActivePill(this);
+      });
+    });
+
+    // ScrollSpy: Sombrear automáticamente la pestaña correspondiente al hacer scroll
+    const sectionsToTrack = ['inicio', 'funciones', 'showcase', 'beneficios', 'contacto'];
+    window.addEventListener('scroll', () => {
+      const scrollPos = window.scrollY + 200;
+      for (const sectionId of sectionsToTrack) {
+        const el = document.getElementById(sectionId);
+        if (el) {
+          const top = el.offsetTop;
+          const height = el.offsetHeight;
+          if (scrollPos >= top && scrollPos < top + height) {
+            const activeLink = document.querySelector(`.nav-pill[href="#${sectionId}"]`);
+            if (activeLink) {
+              setActivePill(activeLink);
+            }
+            break;
+          }
+        }
+      }
+    });
   </script>
 </body>
 </html>
