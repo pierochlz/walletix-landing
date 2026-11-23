@@ -44,7 +44,7 @@
     'Regístrate': 'Sign Up',
     'Sin comisiones ocultas': 'No hidden fees',
     'Ahorro trimestral prom.': 'Avg. quarterly savings',
-    'Cifrado de grado bancario': 'Bank-grade encryption',
+    'Sesiones con token seguro': 'Secure token-based sessions',
     'Walletix Logo': 'Walletix logo',
     'Walletix - Tarjeta Oficial de Marca': 'Walletix - Official brand card',
 
@@ -67,9 +67,8 @@
     'Consejos Financieros Personalizados': 'Personalized Financial Tips',
     'Recomendaciones inteligentes basadas en tus hábitos de consumo directo y la adaptación práctica de la regla 50/30/20 a tus ingresos mensuales.': 'Smart recommendations based on your spending habits and a practical adaptation of the 50/30/20 rule to your monthly income.',
     'Método 50 / 30 / 20': '50 / 30 / 20 Method',
-    'Seguridad y Privacidad Bancaria': 'Bank-Level Security and Privacy',
-    'Cifrado perimetral de 256 bits, modo privacidad para ocultar saldos en espacios públicos y copias de respaldo automáticas y encriptadas.': '256-bit perimeter encryption, a privacy mode to hide balances in public places and automatic encrypted backups.',
-    'Cifrado AES-256': 'AES-256 Encryption',
+    'Seguridad y Privacidad de tus Datos': 'Security and Privacy of Your Data',
+    'Contraseñas cifradas con BCrypt, sesiones protegidas con tokens JWT y permisos por rol: cada usuario solo puede ver y editar su propia información.': 'Passwords encrypted with BCrypt, sessions protected with JWT tokens and role-based permissions: each user can only see and edit their own information.',
 
     // Dashboard showcase
     'Arquitectura de Software & Interfaz': 'Software Architecture & Interface',
@@ -176,12 +175,6 @@
 
     // Footer
     'Plataforma de gestión financiera personal basada en la arquitectura oficial de Walletix. Monitoreo en tiempo real, erradicación de gastos hormiga y cumplimiento de metas presupuestales.': 'Personal finance management platform based on the official Walletix architecture. Real-time monitoring, elimination of small daily expenses and budget goal tracking.',
-    'Facebook de Walletix': 'Walletix on Facebook',
-    'Instagram de Walletix': 'Walletix on Instagram',
-    'TikTok de Walletix': 'Walletix on TikTok',
-    'LinkedIn de Walletix': 'Walletix on LinkedIn',
-    'X (Twitter) de Walletix': 'Walletix on X (Twitter)',
-    'Canal de YouTube de Walletix': 'Walletix YouTube channel',
     'Producto': 'Product',
     'Control de Gastos': 'Expense Tracking',
     'Alertas Inteligentes': 'Smart Alerts',
@@ -193,9 +186,7 @@
     'Reportar una Falla': 'Report an Issue',
     'Términos y Condiciones': 'Terms and Conditions',
     'Política de Privacidad': 'Privacy Policy',
-    'Seguridad de Datos AES-256': 'AES-256 Data Security',
-    'Cumplimiento SBS / Fintech': 'SBS / Fintech Compliance',
-    'Libro de Reclamaciones': 'Complaints Book',
+    'Contraseñas cifradas con BCrypt': 'Passwords encrypted with BCrypt',
     '© 2026 Walletix Inc. Todos los derechos reservados.': '© 2026 Walletix Inc. All rights reserved.',
     'Proyecto:': 'Project:',
     'Walletix - Arquitectura de Aplicaciones': 'Walletix - Application Architecture',
@@ -223,7 +214,7 @@
     'diseñada para maximizar el rendimiento de tu capital diario.': 'platform designed to get the most out of your everyday money.',
     'Seguimiento inteligente en tiempo real': 'Smart real-time tracking',
     'Detección automática de gastos hormiga': 'Automatic detection of small daily expenses',
-    'Cifrado y seguridad de grado bancario': 'Bank-grade encryption and security',
+    'Contraseñas cifradas y sesiones seguras': 'Encrypted passwords and secure sessions',
     'Bienvenido de vuelta,': 'Welcome back,',
     'ingresa': 'enter',
     'tus': 'your',
