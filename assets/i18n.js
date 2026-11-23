@@ -162,10 +162,8 @@
     'Nuestro equipo de soporte y arquitectura de producto está listo para ayudarte.': 'Our support and product team is ready to help you.',
     'Correo Electrónico': 'Email',
     'Sede Central': 'Headquarters',
-    'Hub Financiero San Isidro, Lima, Perú': 'San Isidro Financial Hub, Lima, Peru',
-    'Operaciones para Latinoamérica': 'Operations for Latin America',
-    'Línea de Soporte': 'Support Line',
-    'Lunes a Viernes: 9:00 AM - 6:00 PM': 'Monday to Friday: 9:00 AM - 6:00 PM',
+    'Lima, Perú': 'Lima, Peru',
+    'Proyecto académico UPC': 'UPC academic project',
     'Nombre Completo': 'Full Name',
     'Ej. Piero Valdivia': 'E.g. Piero Valdivia',
     'Correo Institucional / Personal': 'School / Personal Email',
@@ -175,7 +173,7 @@
     'Mensaje': 'Message',
     'Escribe tu consulta o requerimiento aquí...': 'Write your question or request here...',
     'Enviar Mensaje': 'Send Message',
-    '¡Mensaje recibido con éxito! Un especialista de Walletix te responderá a la brevedad.': 'Message received! A Walletix specialist will reply shortly.',
+    'Abrimos tu aplicación de correo con el mensaje listo. Envíalo desde allí para que nos llegue a walletix.soporte@gmail.com.': 'We opened your email app with the message ready. Send it from there so it reaches walletix.soporte@gmail.com.',
 
     // Footer
     'Plataforma de gestión financiera personal basada en la arquitectura oficial de Walletix. Monitoreo en tiempo real, erradicación de gastos hormiga y cumplimiento de metas presupuestales.': 'Personal finance management platform based on the official Walletix architecture. Real-time monitoring, elimination of small daily expenses and budget goal tracking.',
@@ -235,9 +233,9 @@
     'Regístrate gratis': 'Sign up for free',
 
     // Messages built from JavaScript (see t() below)
-    'Enviando...': 'Sending...',
-    '¡Mensaje Enviado!': 'Message Sent!',
     'Iniciando sesión...': 'Logging in...',
+    'Nombre': 'Name',
+    'Correo': 'Email',
   };
 
   var originalText = new WeakMap(); // text node -> original Spanish text

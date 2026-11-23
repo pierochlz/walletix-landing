@@ -865,8 +865,7 @@
                 </div>
                 <div>
                   <h4 class="text-sm font-bold text-white">Correo Electrónico</h4>
-                  <a href="mailto:soporte@walletix.pe" class="text-xs text-brand-green hover:underline">soporte@walletix.pe</a>
-                  <p class="text-xs text-slate-400 mt-0.5">contacto@walletix.app</p>
+                  <a href="mailto:walletix.soporte@gmail.com" class="text-xs text-brand-green hover:underline">walletix.soporte@gmail.com</a>
                 </div>
               </div>
 
@@ -879,21 +878,8 @@
                 </div>
                 <div>
                   <h4 class="text-sm font-bold text-white">Sede Central</h4>
-                  <p class="text-xs text-slate-300">Hub Financiero San Isidro, Lima, Perú</p>
-                  <p class="text-xs text-slate-400 mt-0.5">Operaciones para Latinoamérica</p>
-                </div>
-              </div>
-
-              <div class="flex items-start gap-4">
-                <div class="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center shrink-0">
-                  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-                  </svg>
-                </div>
-                <div>
-                  <h4 class="text-sm font-bold text-white">Línea de Soporte</h4>
-                  <p class="text-xs text-slate-300">+51 (1) 708-9200</p>
-                  <p class="text-xs text-slate-400 mt-0.5">Lunes a Viernes: 9:00 AM - 6:00 PM</p>
+                  <p class="text-xs text-slate-300">Lima, Perú</p>
+                  <p class="text-xs text-slate-400 mt-0.5">Proyecto académico UPC</p>
                 </div>
               </div>
 
@@ -961,12 +947,12 @@
                 </button>
               </form>
 
-              <!-- Notificación de Éxito de Envío -->
-              <div id="formSuccess" class="hidden mt-4 p-4 rounded-xl bg-brand-green/20 border border-brand-green/40 text-brand-green text-xs flex items-center gap-2">
-                <svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <!-- Aviso: el mensaje se termina de enviar desde la aplicación de correo del visitante -->
+              <div id="formSuccess" role="status" class="hidden mt-4 p-4 rounded-xl bg-brand-green/20 border border-brand-green/40 text-brand-green text-xs flex items-center gap-2">
+                <svg aria-hidden="true" class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                 </svg>
-                <span>¡Mensaje recibido con éxito! Un especialista de Walletix te responderá a la brevedad.</span>
+                <span>Abrimos tu aplicación de correo con el mensaje listo. Envíalo desde allí para que nos llegue a walletix.soporte@gmail.com.</span>
               </div>
 
             </div>
@@ -1204,21 +1190,24 @@
       }
     });
 
-    // Envío del Formulario de Contacto con feedback visual
+    // Formulario de contacto: arma un correo (mailto:) para walletix.soporte@gmail.com
+    // y lo abre en la aplicación de correo del visitante. La landing no guarda ni envía datos por sí sola.
+    const CORREO_SOPORTE = 'walletix.soporte@gmail.com';
+
     function handleContactSubmit(e) {
       e.preventDefault();
-      const btn = document.getElementById('submitBtn');
-      const success = document.getElementById('formSuccess');
-      btn.disabled = true;
-      btn.innerHTML = `<span class="animate-spin mr-2">🔄</span> ${t('Enviando...')}`;
+      const nombre = document.getElementById('name').value.trim();
+      const correo = document.getElementById('email').value.trim();
+      const asunto = document.getElementById('subject').value.trim();
+      const mensaje = document.getElementById('message').value.trim();
 
-      setTimeout(() => {
-        success.classList.remove('hidden');
-        btn.innerHTML = `<span>${t('¡Mensaje Enviado!')}</span>`;
-        btn.classList.remove('bg-brand-green');
-        btn.classList.add('bg-emerald-600', 'text-white');
-        document.getElementById('contactForm').reset();
-      }, 900);
+      const cuerpo = `${mensaje}\n\n--\n${t('Nombre')}: ${nombre}\n${t('Correo')}: ${correo}`;
+      // encodeURIComponent: los espacios, tildes y saltos de línea viajan bien dentro del enlace
+      window.location.href = `mailto:${CORREO_SOPORTE}`
+        + `?subject=${encodeURIComponent('[Walletix] ' + asunto)}`
+        + `&body=${encodeURIComponent(cuerpo)}`;
+
+      document.getElementById('formSuccess').classList.remove('hidden');
     }
 
 
