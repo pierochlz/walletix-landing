@@ -272,7 +272,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           
           <!-- Card 1: Control de Gastos e Ingresos -->
-          <article class="glass-card rounded-2xl p-7 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-glow-green/20 group">
+          <article class="relative glass-card rounded-2xl p-7 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-glow-green/20 group">
             <div class="space-y-5">
               <div class="w-12 h-12 rounded-xl bg-brand-green/10 border border-brand-green/20 flex items-center justify-center text-brand-green group-hover:scale-110 transition-transform">
                 <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -286,14 +286,15 @@
                 Registro ágil, categorización automática y monitoreo permanente de fugas de dinero para erradicar los gastos hormiga que frenan tu ahorro.
               </p>
             </div>
-            <div class="pt-6 mt-6 border-t border-white/10 flex items-center justify-between">
+            <!-- Toda la tarjeta es un enlace a la app (after:absolute after:inset-0 cubre la tarjeta) -->
+            <a href="https://pierochlz.github.io/walletix-web/expenses" aria-label="Abrir Gastos en la app" class="pt-6 mt-6 border-t border-white/10 flex items-center justify-between after:absolute after:inset-0 after:rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-green rounded-lg">
               <span class="text-xs font-semibold text-brand-green">Actualización instantánea</span>
-              <span class="text-slate-400 group-hover:translate-x-1 transition-transform">→</span>
-            </div>
+              <span aria-hidden="true" class="text-slate-400 group-hover:translate-x-1 transition-transform">→</span>
+            </a>
           </article>
 
           <!-- Card 2: Análisis Comparativo y Gráficos Visuales -->
-          <article class="glass-card rounded-2xl p-7 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-glow-blue/20 group">
+          <article class="relative glass-card rounded-2xl p-7 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-glow-blue/20 group">
             <div class="space-y-5">
               <div class="w-12 h-12 rounded-xl bg-brand-blue/10 border border-brand-blue/20 flex items-center justify-center text-brand-cyan group-hover:scale-110 transition-transform">
                 <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -307,14 +308,15 @@
                 Reportes interactivos de gastos vs ingresos, proyecciones a fin de mes y balances consolidados configurados en Soles (PEN) y multimoneda.
               </p>
             </div>
-            <div class="pt-6 mt-6 border-t border-white/10 flex items-center justify-between">
+            <!-- Toda la tarjeta es un enlace a la app (after:absolute after:inset-0 cubre la tarjeta) -->
+            <a href="https://pierochlz.github.io/walletix-web/dashboard" aria-label="Abrir el panel de inicio en la app" class="pt-6 mt-6 border-t border-white/10 flex items-center justify-between after:absolute after:inset-0 after:rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-green rounded-lg">
               <span class="text-xs font-semibold text-brand-cyan">Métricas en PEN (S/.)</span>
-              <span class="text-slate-400 group-hover:translate-x-1 transition-transform">→</span>
-            </div>
+              <span aria-hidden="true" class="text-slate-400 group-hover:translate-x-1 transition-transform">→</span>
+            </a>
           </article>
 
           <!-- Card 3: Límites Presupuestales y Alertas Inteligentes -->
-          <article class="glass-card rounded-2xl p-7 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-glow-green/20 group">
+          <article class="relative glass-card rounded-2xl p-7 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-glow-green/20 group">
             <div class="space-y-5">
               <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 group-hover:scale-110 transition-transform">
                 <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -328,14 +330,15 @@
                 Configura topes mensuales y recibe notificaciones preventivas automáticas antes de sobrepasar tus límites en Alimentos, Ocio o Transporte.
               </p>
             </div>
-            <div class="pt-6 mt-6 border-t border-white/10 flex items-center justify-between">
+            <!-- Toda la tarjeta es un enlace a la app (after:absolute after:inset-0 cubre la tarjeta) -->
+            <a href="https://pierochlz.github.io/walletix-web/budgets" aria-label="Abrir Presupuestos en la app" class="pt-6 mt-6 border-t border-white/10 flex items-center justify-between after:absolute after:inset-0 after:rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-green rounded-lg">
               <span class="text-xs font-semibold text-amber-400">Alertas preventivas</span>
-              <span class="text-slate-400 group-hover:translate-x-1 transition-transform">→</span>
-            </div>
+              <span aria-hidden="true" class="text-slate-400 group-hover:translate-x-1 transition-transform">→</span>
+            </a>
           </article>
 
           <!-- Card 4: Gamificación, Retos y Logros -->
-          <article class="glass-card rounded-2xl p-7 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-glow-green/20 group">
+          <article class="relative glass-card rounded-2xl p-7 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-glow-green/20 group">
             <div class="space-y-5">
               <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 group-hover:scale-110 transition-transform">
                 <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -349,14 +352,15 @@
                 Desafíos semanales activos como "7 días sin delivery" o "Ahorro Express", desbloqueando medallas e insignias que premian tu constancia financiera.
               </p>
             </div>
-            <div class="pt-6 mt-6 border-t border-white/10 flex items-center justify-between">
+            <!-- Toda la tarjeta es un enlace a la app (after:absolute after:inset-0 cubre la tarjeta) -->
+            <a href="https://pierochlz.github.io/walletix-web/goals" aria-label="Abrir Metas de ahorro en la app" class="pt-6 mt-6 border-t border-white/10 flex items-center justify-between after:absolute after:inset-0 after:rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-green rounded-lg">
               <span class="text-xs font-semibold text-purple-400">Insignias de constancia</span>
-              <span class="text-slate-400 group-hover:translate-x-1 transition-transform">→</span>
-            </div>
+              <span aria-hidden="true" class="text-slate-400 group-hover:translate-x-1 transition-transform">→</span>
+            </a>
           </article>
 
           <!-- Card 5: Consejos Financieros Personalizados -->
-          <article class="glass-card rounded-2xl p-7 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-glow-green/20 group">
+          <article class="relative glass-card rounded-2xl p-7 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-glow-green/20 group">
             <div class="space-y-5">
               <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-brand-green group-hover:scale-110 transition-transform">
                 <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -370,14 +374,15 @@
                 Recomendaciones inteligentes basadas en tus hábitos de consumo directo y la adaptación práctica de la regla 50/30/20 a tus ingresos mensuales.
               </p>
             </div>
-            <div class="pt-6 mt-6 border-t border-white/10 flex items-center justify-between">
+            <!-- Toda la tarjeta es un enlace a la app (after:absolute after:inset-0 cubre la tarjeta) -->
+            <a href="https://pierochlz.github.io/walletix-web/dashboard" aria-label="Abrir el panel de inicio en la app" class="pt-6 mt-6 border-t border-white/10 flex items-center justify-between after:absolute after:inset-0 after:rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-green rounded-lg">
               <span class="text-xs font-semibold text-brand-green">Método 50 / 30 / 20</span>
-              <span class="text-slate-400 group-hover:translate-x-1 transition-transform">→</span>
-            </div>
+              <span aria-hidden="true" class="text-slate-400 group-hover:translate-x-1 transition-transform">→</span>
+            </a>
           </article>
 
           <!-- Card 6: Seguridad y Privacidad Bancaria -->
-          <article class="glass-card rounded-2xl p-7 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-glow-blue/20 group">
+          <article class="relative glass-card rounded-2xl p-7 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-glow-blue/20 group">
             <div class="space-y-5">
               <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform">
                 <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -391,10 +396,11 @@
                 Contraseñas cifradas con BCrypt, sesiones protegidas con tokens JWT y permisos por rol: cada usuario solo puede ver y editar su propia información.
               </p>
             </div>
-            <div class="pt-6 mt-6 border-t border-white/10 flex items-center justify-between">
+            <!-- Toda la tarjeta es un enlace a la app (after:absolute after:inset-0 cubre la tarjeta) -->
+            <a href="https://pierochlz.github.io/walletix-web/profile" aria-label="Abrir Mi perfil en la app" class="pt-6 mt-6 border-t border-white/10 flex items-center justify-between after:absolute after:inset-0 after:rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-green rounded-lg">
               <span class="text-xs font-semibold text-blue-400">BCrypt + JWT</span>
-              <span class="text-slate-400 group-hover:translate-x-1 transition-transform">→</span>
-            </div>
+              <span aria-hidden="true" class="text-slate-400 group-hover:translate-x-1 transition-transform">→</span>
+            </a>
           </article>
 
         </div>
@@ -818,20 +824,16 @@
           Únete a la nueva generación que no deja sus ahorros a la suerte. Regístrate en Walletix de forma 100% gratuita.
         </p>
 
-        <!-- Formulario Rápido de Pre-registro -->
-        <form onsubmit="handleQuickRegister(event)" class="max-w-md mx-auto flex flex-col sm:flex-row gap-3">
-          <input 
-            type="email" 
-            required 
-            placeholder="Introduce tu correo electrónico" 
-            class="flex-1 px-5 py-3.5 rounded-full bg-brand-surface border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-green text-sm"
-          />
-          <button 
-            type="submit" 
-            class="px-7 py-3.5 rounded-full bg-brand-green text-brand-darkest font-bold text-sm hover:shadow-glow-green transition-all duration-300 shrink-0">
-            Crear Cuenta Gratis
-          </button>
-        </form>
+        <!-- Lleva al registro real de la aplicación web (el registro se hace allí, contra la API) -->
+        <div class="flex justify-center">
+          <a href="https://pierochlz.github.io/walletix-web/register"
+             class="px-9 py-4 rounded-full bg-brand-green text-brand-darkest font-bold text-base hover:shadow-glow-green transition-all duration-300 inline-flex items-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-white">
+            <span>Crear Cuenta Gratis</span>
+            <svg aria-hidden="true" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+            </svg>
+          </a>
+        </div>
         <p class="text-xs text-slate-400">Sin tarjeta de crédito requerida • Cancela o exporta tus datos cuando quieras</p>
 
       </div>
@@ -1130,8 +1132,6 @@
   <script src="assets/i18n.js"></script>
 
   <script>
-    // Dirección de la aplicación web Angular (login, registro y términos reales)
-    const APP_URL = 'https://pierochlz.github.io/walletix-web';
     // Traduce los textos que se arman desde JavaScript (ver assets/i18n.js)
     const t = (texto) => window.WalletixI18n.t(texto);
 
@@ -1221,11 +1221,6 @@
       }, 900);
     }
 
-    // Registro rápido: lleva al registro real de la aplicación web
-    function handleQuickRegister(e) {
-      e.preventDefault();
-      window.location.href = `${APP_URL}/register`;
-    }
 
     // Simulación de Login en el Modal
     function handleModalSubmit(e) {

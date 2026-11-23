@@ -30,6 +30,11 @@
     'Iniciar Sesión': 'Log In',
     'Regístrate Gratis': 'Sign Up Free',
     'Abrir menú': 'Open menu',
+    'Abrir Gastos en la app': 'Open Expenses in the app',
+    'Abrir el panel de inicio en la app': 'Open the dashboard in the app',
+    'Abrir Presupuestos en la app': 'Open Budgets in the app',
+    'Abrir Metas de ahorro en la app': 'Open Savings goals in the app',
+    'Abrir Mi perfil en la app': 'Open My profile in the app',
     'Vista Previa': 'Preview',
     'Registrarse': 'Sign Up',
     'Volver': 'Back',
@@ -149,7 +154,6 @@
     // Sign-up call to action
     'Toma el control de tu dinero hoy mismo': 'Take control of your money today',
     'Únete a la nueva generación que no deja sus ahorros a la suerte. Regístrate en Walletix de forma 100% gratuita.': 'Join the new generation that does not leave its savings to chance. Sign up for Walletix 100% free.',
-    'Introduce tu correo electrónico': 'Enter your email address',
     'Crear Cuenta Gratis': 'Create Free Account',
     'Sin tarjeta de crédito requerida • Cancela o exporta tus datos cuando quieras': 'No credit card required • Cancel or export your data anytime',
 
