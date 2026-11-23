@@ -92,6 +92,9 @@
 
 <body class="bg-brand-darkest text-slate-100 font-sans antialiased selection:bg-brand-green selection:text-brand-darkest overflow-x-hidden">
 
+  <!-- Accesibilidad: enlace para saltar el menú con el teclado (visible solo al recibir foco) -->
+  <a href="#contenido" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[60] focus:px-4 focus:py-2 focus:rounded-lg focus:bg-brand-green focus:text-brand-darkest focus:font-bold">Saltar al contenido principal</a>
+
   <!-- =========================================================================
        1. HEADER / NAVEGACIÓN PRINCIPAL RESPONSIVE
        ========================================================================= -->
@@ -106,7 +109,7 @@
         </a>
 
         <!-- Desktop Navigation Links con Sombreado Interactivo -->
-        <nav id="desktopNav" class="hidden md:flex items-center bg-[#131F33] rounded-full p-1.5 border border-white/10 text-xs font-semibold">
+        <nav id="desktopNav" aria-label="Navegación principal" class="hidden md:flex items-center bg-[#131F33] rounded-full p-1.5 border border-white/10 text-xs font-semibold">
           <a href="#inicio" class="nav-pill px-5 py-2 text-white bg-white/20 rounded-full transition-all duration-200 hover:bg-white/15">Inicio</a>
           <a href="#funciones" class="nav-pill px-5 py-2 text-slate-300 hover:text-white hover:bg-white/10 rounded-full transition-all duration-200">Funciones</a>
           <a href="#showcase" class="nav-pill px-5 py-2 text-slate-300 hover:text-white hover:bg-white/10 rounded-full transition-all duration-200">Dashboard</a>
@@ -116,17 +119,20 @@
 
         <!-- Header Actions: Iniciar Sesión / Registro -->
         <div class="hidden md:flex items-center gap-3">
-          <a href="login.html" class="px-5 py-2.5 text-sm font-semibold text-slate-200 hover:text-white border border-white/10 hover:border-white/30 rounded-full transition-all duration-200">
+          <!-- Cambio de idioma ES / EN (assets/i18n.js) -->
+          <button type="button" data-lang-toggle data-no-i18n class="px-3 py-2 text-xs font-bold text-slate-200 border border-white/10 hover:border-white/30 rounded-full transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-brand-green">EN</button>
+          <a href="https://pierochlz.github.io/walletix-web/login" class="px-5 py-2.5 text-sm font-semibold text-slate-200 hover:text-white border border-white/10 hover:border-white/30 rounded-full transition-all duration-200">
             Iniciar Sesión
           </a>
-          <a href="#registro" class="px-5 py-2.5 text-sm font-bold text-brand-darkest bg-white hover:bg-brand-green hover:shadow-glow-green transition-all duration-300 rounded-full focus:outline-none focus:ring-2 focus:ring-brand-green">
+          <a href="https://pierochlz.github.io/walletix-web/register" class="px-5 py-2.5 text-sm font-bold text-brand-darkest bg-white hover:bg-brand-green hover:shadow-glow-green transition-all duration-300 rounded-full focus:outline-none focus:ring-2 focus:ring-brand-green">
             Regístrate Gratis
           </a>
         </div>
 
         <!-- Botón Menú Hamburguesa Móvil -->
-        <div class="flex md:hidden">
-          <button id="mobileMenuBtn" type="button" aria-label="Abrir menú" class="p-2 rounded-lg text-slate-300 hover:text-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-brand-green">
+        <div class="flex md:hidden items-center gap-2">
+          <button type="button" data-lang-toggle data-no-i18n class="px-3 py-2 text-xs font-bold text-slate-200 border border-white/10 rounded-full focus:outline-none focus:ring-2 focus:ring-brand-green">EN</button>
+          <button id="mobileMenuBtn" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu" class="p-2 rounded-lg text-slate-300 hover:text-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-brand-green">
             <svg id="hamburgerIcon" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
@@ -148,17 +154,17 @@
       <a href="#contacto" onclick="closeMobileMenu()" class="block px-4 py-2.5 text-base font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-xl">Atención al Usuario</a>
       
       <div class="pt-4 border-t border-white/10 flex flex-col gap-3">
-        <a href="login.html" onclick="closeMobileMenu()" class="w-full py-3 text-center text-sm font-semibold text-slate-200 border border-white/15 rounded-xl hover:bg-white/5 block">
+        <a href="https://pierochlz.github.io/walletix-web/login" onclick="closeMobileMenu()" class="w-full py-3 text-center text-sm font-semibold text-slate-200 border border-white/15 rounded-xl hover:bg-white/5 block">
           Iniciar Sesión
         </a>
-        <a href="#registro" onclick="closeMobileMenu()" class="w-full py-3 text-center text-sm font-bold text-brand-darkest bg-brand-green rounded-xl shadow-glow-green">
+        <a href="https://pierochlz.github.io/walletix-web/register" onclick="closeMobileMenu()" class="w-full py-3 text-center text-sm font-bold text-brand-darkest bg-brand-green rounded-xl shadow-glow-green">
           Regístrate Gratis
         </a>
       </div>
     </div>
   </header>
 
-  <main>
+  <main id="contenido" tabindex="-1" class="focus:outline-none">
     <!-- =========================================================================
          2. HERO SECTION (PITCH DIRECTO DEL FIGMA & CTA CONVERSIÓN)
          ========================================================================= -->
@@ -199,7 +205,7 @@
 
             <!-- Botón de Acción Principal (Figma Oficial: Regístrate) -->
             <div class="flex justify-center lg:justify-start pt-2">
-              <a href="#registro" class="px-9 py-4 rounded-full bg-white text-brand-darkest font-bold text-base hover:bg-brand-green hover:shadow-glow-green transition-all duration-300 inline-flex items-center justify-center gap-2 group shadow-xl">
+              <a href="https://pierochlz.github.io/walletix-web/register" class="px-9 py-4 rounded-full bg-white text-brand-darkest font-bold text-base hover:bg-brand-green hover:shadow-glow-green transition-all duration-300 inline-flex items-center justify-center gap-2 group shadow-xl">
                 <span>Regístrate</span>
                 <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
@@ -1063,8 +1069,8 @@
         <div class="space-y-3">
           <h5 class="text-sm font-bold text-white uppercase tracking-wider">Legal</h5>
           <ul class="space-y-2 text-xs">
-            <li><a href="#contacto" class="hover:text-brand-green transition-colors">Términos de Servicio</a></li>
-            <li><a href="#contacto" class="hover:text-brand-green transition-colors">Política de Privacidad</a></li>
+            <li><a href="https://pierochlz.github.io/walletix-web/terms" class="hover:text-brand-green transition-colors">Términos y Condiciones</a></li>
+            <li><a href="https://pierochlz.github.io/walletix-web/terms" class="hover:text-brand-green transition-colors">Política de Privacidad</a></li>
             <li><a href="#contacto" class="hover:text-brand-green transition-colors">Seguridad de Datos AES-256</a></li>
             <li><a href="#contacto" class="hover:text-brand-green transition-colors">Cumplimiento SBS / Fintech</a></li>
             <li><a href="#contacto" class="hover:text-brand-green transition-colors">Libro de Reclamaciones</a></li>
@@ -1076,6 +1082,7 @@
       <!-- Copyright y Créditos Académicos -->
       <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs gap-4">
         <p>© 2026 Walletix Inc. Todos los derechos reservados.</p>
+        <a href="https://pierochlz.github.io/walletix-web/terms" class="text-brand-green hover:underline font-semibold">Términos y Condiciones</a>
         <p class="text-slate-500">
           Proyecto: <span class="text-slate-300 font-semibold">Walletix - Arquitectura de Aplicaciones</span> • Diseño Frontend Responsive
         </p>
@@ -1165,7 +1172,15 @@
   <!-- =========================================================================
        11. JAVASCRIPT: MICRO-INTERACCIONES Y CONTROL DE INTERFAZ
        ========================================================= -->
+  <!-- Idiomas es-419 / en-US -->
+  <script src="assets/i18n.js"></script>
+
   <script>
+    // Dirección de la aplicación web Angular (login, registro y términos reales)
+    const APP_URL = 'https://pierochlz.github.io/walletix-web';
+    // Traduce los textos que se arman desde JavaScript (ver assets/i18n.js)
+    const t = (texto) => window.WalletixI18n.t(texto);
+
     // Control del Menú Móvil
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const mobileMenu = document.getElementById('mobileMenu');
@@ -1176,12 +1191,14 @@
       const isHidden = mobileMenu.classList.toggle('hidden');
       hamburgerIcon.classList.toggle('hidden', !isHidden);
       closeIcon.classList.toggle('hidden', isHidden);
+      mobileMenuBtn.setAttribute('aria-expanded', String(!isHidden)); // accesibilidad: avisa si el menú está abierto
     });
 
     function closeMobileMenu() {
       mobileMenu.classList.add('hidden');
       hamburgerIcon.classList.remove('hidden');
       closeIcon.classList.add('hidden');
+      mobileMenuBtn.setAttribute('aria-expanded', 'false');
     }
 
     // Tabs del Showcase (Flujos, Categorías, Presupuesto)
@@ -1239,22 +1256,21 @@
       const btn = document.getElementById('submitBtn');
       const success = document.getElementById('formSuccess');
       btn.disabled = true;
-      btn.innerHTML = `<span class="animate-spin mr-2">🔄</span> Enviando...`;
+      btn.innerHTML = `<span class="animate-spin mr-2">🔄</span> ${t('Enviando...')}`;
 
       setTimeout(() => {
         success.classList.remove('hidden');
-        btn.innerHTML = `<span>¡Mensaje Enviado!</span>`;
+        btn.innerHTML = `<span>${t('¡Mensaje Enviado!')}</span>`;
         btn.classList.remove('bg-brand-green');
         btn.classList.add('bg-emerald-600', 'text-white');
         document.getElementById('contactForm').reset();
       }, 900);
     }
 
-    // Envío del Pre-registro
+    // Registro rápido: lleva al registro real de la aplicación web
     function handleQuickRegister(e) {
       e.preventDefault();
-      alert("¡Registro exitoso en la lista VIP de Walletix! Te enviaremos tu enlace de bienvenida en breves instantes.");
-      e.target.reset();
+      window.location.href = `${APP_URL}/register`;
     }
 
     // Simulación de Login en el Modal
