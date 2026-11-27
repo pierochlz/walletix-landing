@@ -122,7 +122,7 @@
         <nav id="desktopNav" aria-label="Navegación principal" class="hidden md:flex items-center bg-brand-surface rounded-full p-1.5 border border-white/10 text-xs font-semibold">
           <a href="#inicio" class="nav-pill px-5 py-2 text-white bg-white/20 rounded-full transition-all duration-200 hover:bg-white/15">Inicio</a>
           <a href="#funciones" class="nav-pill px-5 py-2 text-slate-300 hover:text-white hover:bg-white/10 rounded-full transition-all duration-200">Funciones</a>
-          <a href="#showcase" class="nav-pill px-5 py-2 text-slate-300 hover:text-white hover:bg-white/10 rounded-full transition-all duration-200">Dashboard</a>
+          <a href="#showcase" class="nav-pill px-5 py-2 text-slate-300 hover:text-white hover:bg-white/10 rounded-full transition-all duration-200">Vista previa</a>
           <a href="#beneficios" class="nav-pill px-5 py-2 text-slate-300 hover:text-white hover:bg-white/10 rounded-full transition-all duration-200">Beneficios</a>
           <a href="#contacto" class="nav-pill px-5 py-2 text-slate-300 hover:text-white hover:bg-white/10 rounded-full transition-all duration-200">Atención al Usuario</a>
         </nav>
@@ -159,7 +159,7 @@
     <div id="mobileMenu" class="hidden md:hidden border-b border-white/10 bg-brand-dark/95 backdrop-blur-xl px-4 pt-3 pb-6 space-y-3 transition-all duration-300">
       <a href="#inicio" onclick="closeMobileMenu()" class="block px-4 py-2.5 text-base font-semibold text-white bg-white/10 rounded-xl">Inicio</a>
       <a href="#funciones" onclick="closeMobileMenu()" class="block px-4 py-2.5 text-base font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-xl">Funciones</a>
-      <a href="#showcase" onclick="closeMobileMenu()" class="block px-4 py-2.5 text-base font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-xl">Vista Previa</a>
+      <a href="#showcase" onclick="closeMobileMenu()" class="block px-4 py-2.5 text-base font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-xl">Vista previa</a>
       <a href="#beneficios" onclick="closeMobileMenu()" class="block px-4 py-2.5 text-base font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-xl">Beneficios</a>
       <a href="#contacto" onclick="closeMobileMenu()" class="block px-4 py-2.5 text-base font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-xl">Atención al Usuario</a>
       
@@ -234,8 +234,8 @@
                 <p class="text-xs text-slate-400">Español e inglés</p>
               </div>
               <div>
-                <p class="text-2xl font-bold text-brand-cyan tracking-tight">JWT</p>
-                <p class="text-xs text-slate-400">Sesiones con token seguro</p>
+                <p class="text-2xl font-bold text-brand-cyan tracking-tight">Privado</p>
+                <p class="text-xs text-slate-400">Solo tú ves tus datos</p>
               </div>
             </div>
 
@@ -452,7 +452,7 @@
         
         <div class="text-center max-w-3xl mx-auto mb-12 space-y-4">
           <span class="px-4 py-1.5 rounded-full bg-brand-green/10 border border-brand-green/20 text-xs font-bold text-brand-green uppercase tracking-wider">
-            Arquitectura de Software & Interfaz
+            Capturas reales de la app
           </span>
           <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
             Diseñado para la velocidad y la claridad financiera
@@ -462,230 +462,45 @@
           </p>
         </div>
 
-        <!-- Pestañas interactivas para cambiar módulos (Tabs) -->
+        <!-- Pestañas: capturas reales de la web app (modo oscuro, datos de ejemplo) -->
         <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-8">
-          <button onclick="switchTab('flujos')" id="tab-btn-flujos" class="tab-btn active px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 bg-brand-green text-brand-darkest shadow-glow-green">
-            Comparativa de Flujos
+          <button type="button" onclick="switchTab('flujos')" id="tab-btn-flujos" aria-controls="tab-content-flujos" class="tab-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 bg-brand-green text-brand-darkest shadow-glow-green">
+            Panel principal
           </button>
-          <button onclick="switchTab('categorias')" id="tab-btn-categorias" class="tab-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 bg-brand-surface text-slate-300 hover:text-white border border-white/10">
-            Distribución por Categorías
+          <button type="button" onclick="switchTab('categorias')" id="tab-btn-categorias" aria-controls="tab-content-categorias" class="tab-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 bg-brand-surface text-slate-300 hover:text-white border border-white/10">
+            Gastos
           </button>
-          <button onclick="switchTab('presupuesto')" id="tab-btn-presupuesto" class="tab-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 bg-brand-surface text-slate-300 hover:text-white border border-white/10">
-            Límites Presupuestales
+          <button type="button" onclick="switchTab('presupuesto')" id="tab-btn-presupuesto" aria-controls="tab-content-presupuesto" class="tab-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 bg-brand-surface text-slate-300 hover:text-white border border-white/10">
+            Presupuestos
           </button>
         </div>
 
-        <!-- Ventana / Mockup del Sistema (Simulador Desktop de Alta Fidelidad) -->
+        <!-- Marco de navegador con la captura de la app -->
         <div class="rounded-2xl border border-white/15 bg-brand-dark shadow-2xl overflow-hidden max-w-5xl mx-auto">
-          
-          <!-- Barra superior de ventana estilo navegador -->
           <div class="bg-brand-surface px-4 py-3 border-b border-white/10 flex items-center justify-between">
-            <div class="flex items-center gap-2">
+            <div class="flex items-center gap-2" aria-hidden="true">
               <span class="w-3 h-3 rounded-full bg-rose-500"></span>
               <span class="w-3 h-3 rounded-full bg-amber-500"></span>
               <span class="w-3 h-3 rounded-full bg-brand-green"></span>
             </div>
             <div class="hidden sm:flex items-center gap-2 bg-brand-darkest/60 px-4 py-1 rounded-md text-xs text-slate-400 font-mono border border-white/5">
-              <svg class="w-3.5 h-3.5 text-brand-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
-              </svg>
               <span>pierochlz.github.io/walletix-web</span>
             </div>
-            <div class="text-xs text-slate-400 font-medium flex items-center gap-2">
-              <span class="w-2 h-2 rounded-full bg-brand-green"></span>
-              <span>Vista previa</span>
+            <div class="text-xs text-slate-400 font-medium">Datos de ejemplo</div>
+          </div>
+          <div class="bg-brand-darkest">
+            <div id="tab-content-flujos" class="tab-panel">
+              <img src="assets/app-panel.png" alt="Panel principal de Walletix: saldo actual, ingresos y gastos del mes, puntos y evolución del saldo" width="2160" height="1350" loading="lazy" decoding="async" class="block w-full h-auto" />
+            </div>
+            <div id="tab-content-categorias" class="tab-panel hidden">
+              <img src="assets/app-gastos.png" alt="Tabla de gastos de Walletix con categoría, comercio, monto y fecha" width="2160" height="1350" loading="lazy" decoding="async" class="block w-full h-auto" />
+            </div>
+            <div id="tab-content-presupuesto" class="tab-panel hidden">
+              <img src="assets/app-presupuestos.png" alt="Presupuestos del mes en Walletix: excedido, cerca del límite y vas bien" width="2160" height="1350" loading="lazy" decoding="async" class="block w-full h-auto" />
             </div>
           </div>
-
-          <!-- Contenido dinámico según Tab -->
-          <div class="p-4 sm:p-8 bg-brand-darkest/90 min-h-[420px] text-slate-100">
-            
-            <!-- TAB 1: COMPARATIVA DE FLUJOS (FIGMA EXACTO) -->
-            <div id="tab-content-flujos" class="tab-panel space-y-6">
-              <!-- Sub-header interno del dashboard -->
-              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-white/10">
-                <div>
-                  <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Análisis Financiero • Auditoría Temporal</span>
-                  <h4 class="text-2xl font-extrabold text-white">Comparativa de Flujos</h4>
-                </div>
-                <div class="flex items-center gap-2">
-                  <span class="text-xs px-3 py-1.5 rounded-lg bg-brand-surface border border-white/10 text-slate-300">Marzo 2025</span>
-                  <span class="text-xs px-3 py-1.5 rounded-lg bg-brand-green/20 text-brand-green font-semibold">Cierre oficial</span>
-                </div>
-              </div>
-
-              <!-- Gráfico y Métricas en Soles -->
-              <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                <!-- Gráfico Simulado SVG -->
-                <div class="lg:col-span-2 bg-brand-surface/70 rounded-xl p-5 border border-white/10">
-                  <div class="flex justify-between items-center mb-4">
-                    <span class="text-sm font-semibold text-white">Curva de Ingresos vs Egresos</span>
-                    <div class="flex items-center gap-4 text-xs font-medium">
-                      <span class="flex items-center gap-1.5 text-brand-green"><span class="w-2.5 h-2.5 rounded-full bg-brand-green"></span> Ingresos (S/)</span>
-                      <span class="flex items-center gap-1.5 text-rose-400"><span class="w-2.5 h-2.5 rounded-full bg-rose-400"></span> Egresos (S/)</span>
-                    </div>
-                  </div>
-                  <!-- Simulación Curva SVG de Figma -->
-                  <div class="w-full h-44 relative">
-                    <svg class="w-full h-full" viewBox="0 0 500 150" fill="none">
-                      <!-- Grid horizontal -->
-                      <line x1="0" y1="30" x2="500" y2="30" stroke="#26364a" stroke-dasharray="3 3" opacity="0.4"/>
-                      <line x1="0" y1="80" x2="500" y2="80" stroke="#26364a" stroke-dasharray="3 3" opacity="0.4"/>
-                      <line x1="0" y1="130" x2="500" y2="130" stroke="#26364a" stroke-dasharray="3 3" opacity="0.4"/>
-                      <!-- Línea de Ingresos (Verde) -->
-                      <path d="M 30 110 Q 250 85 470 20" stroke="#7bd8b1" stroke-width="4" fill="none"/>
-                      <!-- Línea de Egresos (Roja) -->
-                      <path d="M 30 125 Q 250 100 470 120" stroke="#ffb4ab" stroke-width="3" fill="none"/>
-                      <!-- Puntos destacados -->
-                      <circle cx="470" cy="20" r="5" fill="#7bd8b1"/>
-                      <circle cx="470" cy="120" r="4" fill="#ffb4ab"/>
-                    </svg>
-                  </div>
-                  <div class="flex justify-between text-xs text-slate-400 mt-2 font-mono">
-                    <span>Enero 2025</span>
-                    <span>Febrero 2025</span>
-                    <span class="text-brand-green font-bold">Marzo 2025 (S/ +1,200)</span>
-                  </div>
-                </div>
-
-                <!-- KPI Cards laterales -->
-                <div class="space-y-4">
-                  <div class="bg-brand-surface/70 rounded-xl p-4 border border-white/10">
-                    <p class="text-xs text-slate-400 uppercase font-semibold">Ingreso Medio Mensual</p>
-                    <p class="text-2xl font-extrabold text-white mt-1">S/ 1,916.67</p>
-                    <p class="text-xs text-brand-green mt-1">Promedio de los últimos 3 meses</p>
-                  </div>
-                  <div class="bg-brand-surface/70 rounded-xl p-4 border border-white/10">
-                    <p class="text-xs text-slate-400 uppercase font-semibold">Gasto Medio Controlado</p>
-                    <p class="text-2xl font-extrabold text-slate-200 mt-1">S/ 1,350.00</p>
-                    <p class="text-xs text-brand-green mt-1">✓ Dentro del tope sugerido de S/ 1,500</p>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Tabla de Cierre -->
-              <div class="overflow-x-auto">
-                <table class="w-full text-left text-xs sm:text-sm">
-                  <thead class="text-slate-400 border-b border-white/10 font-semibold">
-                    <tr>
-                      <th class="py-2.5 px-3">Mes / Período</th>
-                      <th class="py-2.5 px-3">Ingresos</th>
-                      <th class="py-2.5 px-3">Egresos</th>
-                      <th class="py-2.5 px-3">Balance Neto</th>
-                      <th class="py-2.5 px-3">Diagnóstico</th>
-                    </tr>
-                  </thead>
-                  <tbody class="divide-y divide-white/5">
-                    <tr>
-                      <td class="py-3 px-3 font-medium text-white">Marzo 2025 <span class="ml-1 text-[10px] bg-brand-green/20 text-brand-green px-2 py-0.5 rounded-full">RÉCORD</span></td>
-                      <td class="py-3 px-3 text-slate-200">S/ 2,450.00</td>
-                      <td class="py-3 px-3 text-rose-300">S/ 1,250.00</td>
-                      <td class="py-3 px-3 text-brand-green font-bold">+S/ 1,200.00</td>
-                      <td class="py-3 px-3"><span class="px-2 py-1 rounded bg-brand-green/10 text-brand-green text-xs font-semibold">★ Excelente</span></td>
-                    </tr>
-                    <tr>
-                      <td class="py-3 px-3 text-slate-300">Febrero 2025</td>
-                      <td class="py-3 px-3 text-slate-200">S/ 1,800.00</td>
-                      <td class="py-3 px-3 text-rose-300">S/ 1,600.00</td>
-                      <td class="py-3 px-3 text-brand-green font-semibold">+S/ 200.00</td>
-                      <td class="py-3 px-3"><span class="px-2 py-1 rounded bg-brand-blue/10 text-brand-blue text-xs font-semibold">Dentro de lo previsto</span></td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-
-            <!-- TAB 2: DISTRIBUCIÓN POR CATEGORÍAS -->
-            <div id="tab-content-categorias" class="tab-panel hidden space-y-6">
-              <div class="flex items-center justify-between pb-4 border-b border-white/10">
-                <div>
-                  <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Desglose de Ingresos y Egresos</span>
-                  <h4 class="text-2xl font-extrabold text-white">Distribución por Categorías</h4>
-                </div>
-                <span class="text-xs font-semibold bg-brand-blue/20 text-brand-cyan px-3 py-1.5 rounded-lg">4 fuentes activas</span>
-              </div>
-
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- Tarjeta Sueldo Fijo -->
-                <div class="bg-brand-surface/70 rounded-xl p-5 border border-white/10 space-y-3">
-                  <div class="flex justify-between items-start">
-                    <div>
-                      <h5 class="font-bold text-white text-base">Sueldo Fijo (Nómina)</h5>
-                      <p class="text-xs text-slate-400">Depósito Bancario BCP • Recurrente</p>
-                    </div>
-                    <span class="text-xl font-bold text-brand-green">S/ 1,800.00</span>
-                  </div>
-                  <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
-                    <div class="bg-brand-blue h-full w-[73.5%]"></div>
-                  </div>
-                  <div class="flex justify-between text-xs text-slate-400">
-                    <span>73.5% del total</span>
-                    <span class="text-brand-green">Cobrado puntual el 28</span>
-                  </div>
-                </div>
-
-                <!-- Tarjeta Freelance -->
-                <div class="bg-brand-surface/70 rounded-xl p-5 border border-white/10 space-y-3">
-                  <div class="flex justify-between items-start">
-                    <div>
-                      <h5 class="font-bold text-white text-base">Proyectos Freelance & Asesorías</h5>
-                      <p class="text-xs text-slate-400">Consultorías de UX & Desarrollo • Variable</p>
-                    </div>
-                    <span class="text-xl font-bold text-brand-green">S/ 400.00</span>
-                  </div>
-                  <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
-                    <div class="bg-brand-green h-full w-[16.3%]"></div>
-                  </div>
-                  <div class="flex justify-between text-xs text-slate-400">
-                    <span>16.3% del total</span>
-                    <span class="text-slate-300">2 entregables liquidados</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- TAB 3: LÍMITES PRESUPUESTALES -->
-            <div id="tab-content-presupuesto" class="tab-panel hidden space-y-6">
-              <div class="flex items-center justify-between pb-4 border-b border-white/10">
-                <div>
-                  <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Topes de Seguridad Preventiva</span>
-                  <h4 class="text-2xl font-extrabold text-white">Límites Presupuestales Mensuales</h4>
-                </div>
-                <span class="text-xs font-semibold bg-amber-500/20 text-amber-400 px-3 py-1.5 rounded-lg">Regla 50 / 30 / 20</span>
-              </div>
-
-              <div class="space-y-4">
-                <!-- Item 1: Alimentación & Supermercado -->
-                <div class="bg-brand-surface/70 rounded-xl p-4 border border-white/10">
-                  <div class="flex justify-between items-center mb-2">
-                    <span class="font-semibold text-white text-sm">Alimentación & Supermercado</span>
-                    <span class="text-sm font-bold text-slate-300">S/ 620 / S/ 800 (77%)</span>
-                  </div>
-                  <div class="w-full bg-slate-800 h-2.5 rounded-full overflow-hidden">
-                    <div class="bg-brand-green h-full w-[77%]"></div>
-                  </div>
-                  <span class="text-[11px] text-slate-400 mt-1 block">Estado óptimo: Quedan S/ 180 para los próximos 7 días</span>
-                </div>
-
-                <!-- Item 2: Delivery & Antojos (Alerta) -->
-                <div class="bg-brand-surface/70 rounded-xl p-4 border border-amber-500/30">
-                  <div class="flex justify-between items-center mb-2">
-                    <span class="font-semibold text-amber-300 text-sm flex items-center gap-1.5">
-                      ⚠️ Delivery & Restaurantes (Rappi / PedidosYa)
-                    </span>
-                    <span class="text-sm font-bold text-amber-400">S/ 245 / S/ 250 (98%)</span>
-                  </div>
-                  <div class="w-full bg-slate-800 h-2.5 rounded-full overflow-hidden">
-                    <div class="bg-amber-500 h-full w-[98%]"></div>
-                  </div>
-                  <span class="text-[11px] text-amber-400 mt-1 block">Alerta: Estás a S/ 5.00 de alcanzar tu límite mensual sugerido</span>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
         </div>
+        <p class="text-center text-xs text-slate-400 mt-4">Capturas de la aplicación web real, con datos de ejemplo.</p>
 
       </div>
     </section>

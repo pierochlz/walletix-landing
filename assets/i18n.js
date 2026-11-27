@@ -35,7 +35,6 @@
     'Abrir Presupuestos en la app': 'Open Budgets in the app',
     'Abrir Metas de ahorro en la app': 'Open Savings goals in the app',
     'Abrir Mi perfil en la app': 'Open My profile in the app',
-    'Vista Previa': 'Preview',
     'Registrarse': 'Sign Up',
     'Volver': 'Back',
 
@@ -47,7 +46,6 @@
     'está diseñado para ayudarte a organizar tus ingresos, controlar tus egresos y alcanzar tus metas de ahorro, sin importar si eres estudiante dando tus primeros pasos o un profesional en crecimiento.': 'is designed to help you organize your income, control your spending and reach your savings goals, whether you are a student taking your first steps or a growing professional.',
     'Regístrate': 'Sign Up',
     'Sin comisiones ocultas': 'No hidden fees',
-    'Sesiones con token seguro': 'Secure token-based sessions',
     'Walletix Logo': 'Walletix logo',
     'Walletix - Tarjeta Oficial de Marca': 'Walletix - Official brand card',
 
@@ -68,11 +66,7 @@
     'Contraseñas cifradas con BCrypt, sesiones protegidas con tokens JWT y permisos por rol: cada usuario solo puede ver y editar su propia información.': 'Passwords encrypted with BCrypt, sessions protected with JWT tokens and role-based permissions: each user can only see and edit their own information.',
 
     // Dashboard showcase
-    'Arquitectura de Software & Interfaz': 'Software Architecture & Interface',
     'Diseñado para la velocidad y la claridad financiera': 'Designed for speed and financial clarity',
-    'Comparativa de Flujos': 'Cash Flow Comparison',
-    'Distribución por Categorías': 'Breakdown by Category',
-    'Límites Presupuestales': 'Budget Limits',
     'Análisis Financiero • Auditoría Temporal': 'Financial Analysis • Time Audit',
     'Marzo 2025': 'March 2025',
     'Cierre oficial': 'Official close',
@@ -247,6 +241,18 @@
     '→ Presupuestos con alertas': '→ Budgets with alerts',
     'Sin tarjeta de crédito • 100% gratis': 'No credit card • 100% free',
     '© 2026 Walletix. Todos los derechos reservados.': '© 2026 Walletix. All rights reserved.',
+    // Capturas reales y etiquetas unificadas
+    'Capturas reales de la app': 'Real screenshots of the app',
+    'Panel principal': 'Dashboard',
+    'Gastos': 'Expenses',
+    'Presupuestos': 'Budgets',
+    'Datos de ejemplo': 'Sample data',
+    'Capturas de la aplicación web real, con datos de ejemplo.': 'Screenshots of the real web app, with sample data.',
+    'Panel principal de Walletix: saldo actual, ingresos y gastos del mes, puntos y evolución del saldo': 'Walletix dashboard: current balance, income and expenses of the month, points and balance evolution',
+    'Tabla de gastos de Walletix con categoría, comercio, monto y fecha': 'Walletix expenses table with category, merchant, amount and date',
+    'Presupuestos del mes en Walletix: excedido, cerca del límite y vas bien': 'Walletix monthly budgets: over the limit, close to the limit and on track',
+    'Privado': 'Private',
+    'Solo tú ves tus datos': 'Only you see your data',
   };
 
   var originalText = new WeakMap(); // text node -> original Spanish text
