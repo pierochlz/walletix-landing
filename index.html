@@ -6,13 +6,13 @@
   <title>Walletix - Empieza a Ahorrar, Empieza a Ganar | Gestión Financiera Inteligente</title>
   <meta name="description" content="Walletix es la plataforma fintech de gestión financiera inteligente que te ayuda a organizar ingresos, controlar gastos en tiempo real y alcanzar metas de ahorro." />
   
-  <!-- Favicon SVG con isotipo Walletix -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%230B1320'/%3E%3Cpath d='M10 14h20c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H10c-1.1 0-2-.9-2-2V16c0-1.1.9-2 2-2z' fill='%231E293B' stroke='%2322C55E' stroke-width='2'/%3E%3Cpath d='M14 14v-2a4 4 0 014-4h4a4 4 0 014 4v2' stroke='%2322C55E' stroke-width='2' fill='none'/%3E%3Ccircle cx='25' cy='22' r='2' fill='%2322C55E'/%3E%3Cpath d='M16 26l6-6 4 4' stroke='%2322C55E' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+  <!-- Favicon: misma marca que la web app (billetera sobre esmeralda) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23006c4e'/%3E%3Cpath transform='translate%284 4%29' fill='%23ffffff' d='M21 18v1c0 1.1-.9 2-2 2H5c-1.11 0-2-.9-2-2V5c0-1.1.89-2 2-2h14c1.1 0 2 .9 2 2v1h-9c-1.11 0-2 .9-2 2v8c0 1.1.89 2 2 2h9zm-9-2h10V8H12v8zm4-2.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z'/%3E%3C/svg%3E" />
 
-  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <!-- Google Fonts: Inter (misma tipografía que la web app) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -24,27 +24,31 @@
       theme: {
         extend: {
           colors: {
+            // Mismos tonos que la web app (paleta generada con Angular Material, modo oscuro):
+            // fondos gris azulado, verde esmeralda/menta como color de marca y azul como acento
             brand: {
-              darkest: '#070D18',  // Fondo base ultra profundo
-              dark: '#0B1320',     // Fondo principal Figma
-              surface: '#111C2E',  // Superficie de tarjetas
-              card: '#16233B',     // Elevación secundaria
-              border: '#1E2F4D',   // Bordes sutiles
-              green: '#22C55E',    // Verde éxito/ganancias Figma
-              emerald: '#10B981',  // Verde acento
-              cyan: '#06B6D4',     // Cyan analítico
-              blue: '#0284C7',     // Azul primario botones
-              accent: '#38BDF8',   // Azul hover
-              danger: '#EF4444',   // Rojo gastos / alertas
-              warning: '#F59E0B',  // Alertas presupuestales
+              darkest: '#031427',  // fondo de página (surface)
+              dark: '#0b1c30',     // secciones alternas
+              surface: '#102034',  // tarjetas (surface-container)
+              card: '#1b2b3f',     // elevación secundaria
+              border: '#26364a',   // bordes sutiles
+              green: '#7bd8b1',    // primario en modo oscuro (menta): botones y acentos
+              emerald: '#5fbc97',  // hover del primario
+              deep: '#006c4e',     // primario en modo claro (esmeralda): tarjeta de saldo, logo
+              cyan: '#b2c5ff',     // acento (tertiary)
+              blue: '#8aa9fc',     // acento secundario
+              accent: '#b2c5ff',
+              danger: '#ffb4ab',   // gastos / errores (error en modo oscuro)
+              warning: '#fbbf24',  // alertas de presupuesto (ámbar)
             }
           },
           fontFamily: {
-            sans: ['Plus Jakarta Sans', 'Inter', 'system-ui', 'sans-serif'],
+            // Inter, igual que la web app (números claros y alineados)
+            sans: ['Inter', 'Roboto', 'system-ui', 'sans-serif'],
           },
           boxShadow: {
-            'glow-green': '0 0 35px -5px rgba(34, 197, 94, 0.35)',
-            'glow-blue': '0 0 35px -5px rgba(2, 132, 199, 0.35)',
+            'glow-green': '0 0 35px -5px rgba(123, 216, 177, 0.30)',
+            'glow-blue': '0 0 35px -5px rgba(138, 169, 252, 0.30)',
             'card-glass': '0 8px 32px 0 rgba(0, 0, 0, 0.37)',
           },
           animation: {
@@ -65,26 +69,33 @@
   <style>
     /* Estilos personalizados para gradientes y detalles fintech */
     .hero-glow-bg {
-      background: radial-gradient(circle at 50% 20%, rgba(16, 185, 129, 0.12) 0%, rgba(2, 132, 199, 0.08) 35%, transparent 70%);
+      background: radial-gradient(circle at 50% 20%, rgba(123, 216, 177, 0.10) 0%, rgba(138, 169, 252, 0.07) 35%, transparent 70%);
     }
     .glass-card {
-      background: rgba(17, 28, 46, 0.75);
+      background: rgba(16, 32, 52, 0.75);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       border: 1px solid rgba(255, 255, 255, 0.08);
     }
     .glass-card:hover {
-      border-color: rgba(34, 197, 94, 0.3);
+      border-color: rgba(123, 216, 177, 0.3);
+    }
+    /* Montos alineados, como en la app */
+    .tabular {
+      font-variant-numeric: tabular-nums;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .animate-float, .animate-ping, .animate-pulse-slow { animation: none !important; }
     }
     .custom-scrollbar::-webkit-scrollbar {
       width: 6px;
       height: 6px;
     }
     .custom-scrollbar::-webkit-scrollbar-track {
-      background: #0B1320;
+      background: #0b1c30;
     }
     .custom-scrollbar::-webkit-scrollbar-thumb {
-      background: #1E2F4D;
+      background: #26364a;
       border-radius: 9999px;
     }
   </style>
@@ -102,14 +113,13 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-20">
         
-        <!-- Logo Brand: WALLETIX Oficial -->
+        <!-- Marca: el mismo ícono de billetera de la web app -->
         <a href="#inicio" class="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-brand-green/50 rounded-lg p-1">
-          <img src="assets/walletix-logo.png" alt="Walletix Logo" class="w-10 h-10 rounded-full object-contain shadow-glow-green/20 group-hover:scale-105 transition-transform duration-300" />
-          <span class="text-2xl font-black tracking-wider text-white">WALLETIX</span>
+          <span class="w-10 h-10 group-hover:scale-105 transition-transform duration-300 rounded-xl bg-brand-deep flex items-center justify-center shrink-0 shadow-glow-green/20" aria-hidden="true"><svg viewBox="0 0 24 24" class="w-6 h-6" fill="#ffffff"><path d="M21 18v1c0 1.1-.9 2-2 2H5c-1.11 0-2-.9-2-2V5c0-1.1.89-2 2-2h14c1.1 0 2 .9 2 2v1h-9c-1.11 0-2 .9-2 2v8c0 1.1.89 2 2 2h9zm-9-2h10V8H12v8zm4-2.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg></span><span class="text-2xl font-bold tracking-tight text-white">Walletix</span>
         </a>
 
         <!-- Desktop Navigation Links con Sombreado Interactivo -->
-        <nav id="desktopNav" aria-label="Navegación principal" class="hidden md:flex items-center bg-[#131F33] rounded-full p-1.5 border border-white/10 text-xs font-semibold">
+        <nav id="desktopNav" aria-label="Navegación principal" class="hidden md:flex items-center bg-brand-surface rounded-full p-1.5 border border-white/10 text-xs font-semibold">
           <a href="#inicio" class="nav-pill px-5 py-2 text-white bg-white/20 rounded-full transition-all duration-200 hover:bg-white/15">Inicio</a>
           <a href="#funciones" class="nav-pill px-5 py-2 text-slate-300 hover:text-white hover:bg-white/10 rounded-full transition-all duration-200">Funciones</a>
           <a href="#showcase" class="nav-pill px-5 py-2 text-slate-300 hover:text-white hover:bg-white/10 rounded-full transition-all duration-200">Dashboard</a>
@@ -124,7 +134,7 @@
           <a href="https://pierochlz.github.io/walletix-web/login" class="px-5 py-2.5 text-sm font-semibold text-slate-200 hover:text-white border border-white/10 hover:border-white/30 rounded-full transition-all duration-200">
             Iniciar Sesión
           </a>
-          <a href="https://pierochlz.github.io/walletix-web/register" class="px-5 py-2.5 text-sm font-bold text-brand-darkest bg-white hover:bg-brand-green hover:shadow-glow-green transition-all duration-300 rounded-full focus:outline-none focus:ring-2 focus:ring-brand-green">
+          <a href="https://pierochlz.github.io/walletix-web/register" class="px-5 py-2.5 text-sm font-bold text-brand-darkest bg-brand-green hover:bg-brand-emerald hover:shadow-glow-green transition-all duration-300 rounded-full focus:outline-none focus:ring-2 focus:ring-brand-green">
             Regístrate Gratis
           </a>
         </div>
@@ -185,7 +195,7 @@
                 <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-green opacity-75"></span>
                 <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-green"></span>
               </span>
-              <span>Plataforma Financiera Inteligente en Soles (PEN) y USD</span>
+              <span>Finanzas personales en soles, con retos y microlecciones</span>
             </div>
 
             <!-- Headline Principal de Figma -->
@@ -193,7 +203,7 @@
               EMPIEZA A <br />
               <span class="underline decoration-white/40 underline-offset-8">AHORRAR</span>,<br />
               EMPIEZA A <br />
-              <span class="text-brand-green drop-shadow-[0_0_25px_rgba(34,197,94,0.45)]">GANAR</span>
+              <span class="text-brand-green drop-shadow-[0_0_25px_rgba(123,216,177,0.35)]">GANAR</span>
             </h1>
 
             <!-- Descripción Persuasiva de Figma -->
@@ -205,7 +215,7 @@
 
             <!-- Botón de Acción Principal (Figma Oficial: Regístrate) -->
             <div class="flex justify-center lg:justify-start pt-2">
-              <a href="https://pierochlz.github.io/walletix-web/register" class="px-9 py-4 rounded-full bg-white text-brand-darkest font-bold text-base hover:bg-brand-green hover:shadow-glow-green transition-all duration-300 inline-flex items-center justify-center gap-2 group shadow-xl">
+              <a href="https://pierochlz.github.io/walletix-web/register" class="px-9 py-4 rounded-full bg-brand-green text-brand-darkest font-bold text-base hover:bg-brand-emerald hover:shadow-glow-green transition-all duration-300 inline-flex items-center justify-center gap-2 group shadow-xl">
                 <span>Regístrate</span>
                 <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
@@ -220,8 +230,8 @@
                 <p class="text-xs text-slate-400">Sin comisiones ocultas</p>
               </div>
               <div>
-                <p class="text-2xl font-bold text-brand-green tracking-tight">+36%</p>
-                <p class="text-xs text-slate-400">Ahorro trimestral prom.</p>
+                <p class="text-2xl font-bold text-brand-green tracking-tight">ES · EN</p>
+                <p class="text-xs text-slate-400">Español e inglés</p>
               </div>
               <div>
                 <p class="text-2xl font-bold text-brand-cyan tracking-tight">JWT</p>
@@ -231,17 +241,43 @@
 
           </div>
 
-          <!-- Hero Graphic / Mockup Visual del Logo Oficial (Figma Exacto) -->
+          <!-- Vista previa del panel (en lugar de la imagen del logo) -->
           <div class="lg:col-span-5 relative flex justify-center items-center">
             <!-- Contenedor con efecto Glow y animación flotante -->
-            <div class="w-full max-w-md relative animate-float flex justify-center">
+            <div class="w-full max-w-md relative animate-float flex justify-center pb-6">
               
-              <!-- Imagen Oficial Exportada Directamente desde el Frame de Figma (Node 84:30) -->
-              <img 
-                src="assets/walletix-brand-card.png" 
-                alt="Walletix - Tarjeta Oficial de Marca" 
-                class="w-full max-w-[380px] sm:max-w-[420px] rounded-3xl drop-shadow-[0_25px_60px_rgba(0,0,0,0.6)] transition-transform duration-300 hover:scale-105 select-none"
-              />
+              <!-- Vista previa del panel real de Walletix (mismos colores, textos y tarjeta de saldo que la web app) -->
+              <div class="w-full max-w-[420px]" role="img" aria-label="Vista previa del panel de Walletix: saldo, ingresos, gastos y puntos">
+                <div aria-hidden="true" class="rounded-3xl border border-white/10 bg-brand-surface/90 p-4 sm:p-5 shadow-card-glass">
+                  <div class="flex items-center justify-between mb-4">
+                    <span class="flex items-center gap-2"><span class="w-7 h-7 rounded-xl bg-brand-deep flex items-center justify-center shrink-0 shadow-glow-green/20" aria-hidden="true"><svg viewBox="0 0 24 24" class="w-4 h-4" fill="#ffffff"><path d="M21 18v1c0 1.1-.9 2-2 2H5c-1.11 0-2-.9-2-2V5c0-1.1.89-2 2-2h14c1.1 0 2 .9 2 2v1h-9c-1.11 0-2 .9-2 2v8c0 1.1.89 2 2 2h9zm-9-2h10V8H12v8zm4-2.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg></span><span class="text-sm font-bold text-white">Walletix</span></span>
+                    <span class="text-[11px] px-2.5 py-1 rounded-full bg-brand-green/15 text-brand-green font-semibold">Resumen</span>
+                  </div>
+                  <div class="relative overflow-hidden rounded-2xl bg-brand-deep p-5 text-white">
+                    <div class="absolute -right-12 -top-12 w-40 h-40 rounded-full bg-white/10 blur-2xl"></div>
+                    <p class="text-xs font-semibold opacity-90">Saldo actual</p>
+                    <p class="mt-2 text-3xl sm:text-4xl font-bold tracking-tight tabular">S/ 2,450.00</p>
+                    <p class="mt-2 text-xs opacity-95">↗ Este mes llevas S/ 320.00 a favor</p>
+                  </div>
+                  <div class="grid grid-cols-2 gap-3 mt-3">
+                    <div class="rounded-xl bg-brand-darkest/60 border border-white/5 p-3"><span class="inline-flex w-7 h-7 rounded-lg items-center justify-center text-xs font-bold bg-brand-green/15 text-brand-green">↙</span><p class="text-[11px] text-slate-400 mt-2">Ingresos del mes</p><p class="text-base font-semibold text-white tabular">S/ 1,500.00</p></div>
+                    <div class="rounded-xl bg-brand-darkest/60 border border-white/5 p-3"><span class="inline-flex w-7 h-7 rounded-lg items-center justify-center text-xs font-bold bg-brand-danger/15 text-brand-danger">↗</span><p class="text-[11px] text-slate-400 mt-2">Gastos del mes</p><p class="text-base font-semibold text-white tabular">S/ 1,180.00</p></div>
+                    <div class="rounded-xl bg-brand-darkest/60 border border-white/5 p-3"><span class="inline-flex w-7 h-7 rounded-lg items-center justify-center text-xs font-bold bg-brand-warning/15 text-brand-warning">●</span><p class="text-[11px] text-slate-400 mt-2">Gastos hormiga</p><p class="text-base font-semibold text-white tabular">S/ 18.50</p></div>
+                    <div class="rounded-xl bg-brand-darkest/60 border border-white/5 p-3"><span class="inline-flex w-7 h-7 rounded-lg items-center justify-center text-xs font-bold bg-brand-blue/15 text-brand-blue">★</span><p class="text-[11px] text-slate-400 mt-2">Puntos</p><p class="text-base font-semibold text-white tabular">130</p></div>
+                  </div>
+                  <svg viewBox="0 0 300 70" class="w-full h-16 mt-4" fill="none">
+                    <polygon points="0,62 0,52 60,46 120,48 180,34 240,26 300,12 300,62" fill="#7bd8b1" fill-opacity="0.12"/>
+                    <polyline points="0,52 60,46 120,48 180,34 240,26 300,12" stroke="#7bd8b1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <div aria-hidden="true" class="glass-card absolute -bottom-6 -left-2 sm:-left-8 rounded-2xl px-4 py-3 flex items-center gap-3 shadow-card-glass">
+                  <span class="w-9 h-9 rounded-full bg-brand-green/20 text-brand-green flex items-center justify-center font-bold">✓</span>
+                  <span>
+                    <span class="block text-xs font-semibold text-white">¡Progreso registrado! +20 XP</span>
+                    <span class="block text-[11px] text-slate-400">Semana sin delivery · Día 3 de 7</span>
+                  </span>
+                </div>
+              </div>
 
             </div>
           </div>
@@ -283,7 +319,7 @@
                 Control de Gastos e Ingresos en Tiempo Real
               </h3>
               <p class="text-sm text-slate-300 leading-relaxed">
-                Registro ágil, categorización automática y monitoreo permanente de fugas de dinero para erradicar los gastos hormiga que frenan tu ahorro.
+                Registra tus gastos e ingresos por categoría y comercio: tu saldo se actualiza al instante y ves los gastos hormiga que frenan tu ahorro.
               </p>
             </div>
             <!-- Toda la tarjeta es un enlace a la app (after:absolute after:inset-0 cubre la tarjeta) -->
@@ -305,7 +341,7 @@
                 Análisis Comparativo y Gráficos Visuales
               </h3>
               <p class="text-sm text-slate-300 leading-relaxed">
-                Reportes interactivos de gastos vs ingresos, proyecciones a fin de mes y balances consolidados configurados en Soles (PEN) y multimoneda.
+                Gráficos de ingresos vs gastos, evolución de tu saldo y gastos por categoría, un reporte en PDF y tu saldo convertido a otras monedas.
               </p>
             </div>
             <!-- Toda la tarjeta es un enlace a la app (after:absolute after:inset-0 cubre la tarjeta) -->
@@ -327,7 +363,7 @@
                 Límites Presupuestales y Alertas Inteligentes
               </h3>
               <p class="text-sm text-slate-300 leading-relaxed">
-                Configura topes mensuales y recibe notificaciones preventivas automáticas antes de sobrepasar tus límites en Alimentos, Ocio o Transporte.
+                Configura topes mensuales por categoría: verás en ámbar cuando te acerques al límite y recibirás una alerta si lo superas, por ejemplo en Comida, Entretenimiento o Transporte.
               </p>
             </div>
             <!-- Toda la tarjeta es un enlace a la app (after:absolute after:inset-0 cubre la tarjeta) -->
@@ -340,38 +376,38 @@
           <!-- Card 4: Gamificación, Retos y Logros -->
           <article class="relative glass-card rounded-2xl p-7 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-glow-green/20 group">
             <div class="space-y-5">
-              <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 group-hover:scale-110 transition-transform">
+              <div class="w-12 h-12 rounded-xl bg-brand-cyan/10 border border-purple-500/20 flex items-center justify-center text-brand-cyan group-hover:scale-110 transition-transform">
                 <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
                 </svg>
               </div>
-              <h3 class="text-xl font-bold text-white group-hover:text-purple-400 transition-colors">
+              <h3 class="text-xl font-bold text-white group-hover:text-brand-cyan transition-colors">
                 Gamificación, Retos y Logros de Ahorro
               </h3>
               <p class="text-sm text-slate-300 leading-relaxed">
-                Desafíos semanales activos como "7 días sin delivery" o "Ahorro Express", desbloqueando medallas e insignias que premian tu constancia financiera.
+                Retos como «Semana sin delivery» o «Sin gastos hormiga» que se verifican con tus gastos, más niveles y medallas que premian tu constancia.
               </p>
             </div>
             <!-- Toda la tarjeta es un enlace a la app (after:absolute after:inset-0 cubre la tarjeta) -->
             <a href="https://pierochlz.github.io/walletix-web/goals" aria-label="Abrir Metas de ahorro en la app" class="pt-6 mt-6 border-t border-white/10 flex items-center justify-between after:absolute after:inset-0 after:rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-green rounded-lg">
-              <span class="text-xs font-semibold text-purple-400">Insignias de constancia</span>
+              <span class="text-xs font-semibold text-brand-cyan">Insignias de constancia</span>
               <span aria-hidden="true" class="text-slate-400 group-hover:translate-x-1 transition-transform">→</span>
             </a>
           </article>
 
-          <!-- Card 5: Consejos Financieros Personalizados -->
+          <!-- Card 5: Aprende Finanzas en 1 Minuto -->
           <article class="relative glass-card rounded-2xl p-7 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-glow-green/20 group">
             <div class="space-y-5">
-              <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-brand-green group-hover:scale-110 transition-transform">
+              <div class="w-12 h-12 rounded-xl bg-brand-green/10 border border-emerald-500/20 flex items-center justify-center text-brand-green group-hover:scale-110 transition-transform">
                 <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                 </svg>
               </div>
               <h3 class="text-xl font-bold text-white group-hover:text-brand-green transition-colors">
-                Consejos Financieros Personalizados
+                Aprende Finanzas en 1 Minuto
               </h3>
               <p class="text-sm text-slate-300 leading-relaxed">
-                Recomendaciones inteligentes basadas en tus hábitos de consumo directo y la adaptación práctica de la regla 50/30/20 a tus ingresos mensuales.
+                Microlecciones de un minuto con quiz, como la regla 50/30/20, y un tip financiero cada día para mejorar tus hábitos.
               </p>
             </div>
             <!-- Toda la tarjeta es un enlace a la app (after:absolute after:inset-0 cubre la tarjeta) -->
@@ -384,12 +420,12 @@
           <!-- Card 6: Seguridad y Privacidad Bancaria -->
           <article class="relative glass-card rounded-2xl p-7 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-glow-blue/20 group">
             <div class="space-y-5">
-              <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform">
+              <div class="w-12 h-12 rounded-xl bg-brand-blue/10 border border-blue-500/20 flex items-center justify-center text-brand-blue group-hover:scale-110 transition-transform">
                 <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 </svg>
               </div>
-              <h3 class="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">
+              <h3 class="text-xl font-bold text-white group-hover:text-brand-blue transition-colors">
                 Seguridad y Privacidad de tus Datos
               </h3>
               <p class="text-sm text-slate-300 leading-relaxed">
@@ -398,7 +434,7 @@
             </div>
             <!-- Toda la tarjeta es un enlace a la app (after:absolute after:inset-0 cubre la tarjeta) -->
             <a href="https://pierochlz.github.io/walletix-web/profile" aria-label="Abrir Mi perfil en la app" class="pt-6 mt-6 border-t border-white/10 flex items-center justify-between after:absolute after:inset-0 after:rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-green rounded-lg">
-              <span class="text-xs font-semibold text-blue-400">BCrypt + JWT</span>
+              <span class="text-xs font-semibold text-brand-blue">BCrypt + JWT</span>
               <span aria-hidden="true" class="text-slate-400 group-hover:translate-x-1 transition-transform">→</span>
             </a>
           </article>
@@ -422,7 +458,7 @@
             Diseñado para la velocidad y la claridad financiera
           </h2>
           <p class="text-slate-300 text-base sm:text-lg">
-            Explora las pantallas reales de la plataforma web de Walletix tal como fueron concebidas en la arquitectura de la aplicación.
+            Así se ve el panel de Walletix: tus números de un vistazo, sin fórmulas ni hojas de cálculo.
           </p>
         </div>
 
@@ -440,29 +476,29 @@
         </div>
 
         <!-- Ventana / Mockup del Sistema (Simulador Desktop de Alta Fidelidad) -->
-        <div class="rounded-2xl border border-white/15 bg-slate-900 shadow-2xl overflow-hidden max-w-5xl mx-auto">
+        <div class="rounded-2xl border border-white/15 bg-brand-dark shadow-2xl overflow-hidden max-w-5xl mx-auto">
           
           <!-- Barra superior de ventana estilo navegador -->
-          <div class="bg-slate-800/80 px-4 py-3 border-b border-white/10 flex items-center justify-between">
+          <div class="bg-brand-surface px-4 py-3 border-b border-white/10 flex items-center justify-between">
             <div class="flex items-center gap-2">
               <span class="w-3 h-3 rounded-full bg-rose-500"></span>
               <span class="w-3 h-3 rounded-full bg-amber-500"></span>
-              <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
+              <span class="w-3 h-3 rounded-full bg-brand-green"></span>
             </div>
-            <div class="hidden sm:flex items-center gap-2 bg-slate-900/60 px-4 py-1 rounded-md text-xs text-slate-400 font-mono border border-white/5">
+            <div class="hidden sm:flex items-center gap-2 bg-brand-darkest/60 px-4 py-1 rounded-md text-xs text-slate-400 font-mono border border-white/5">
               <svg class="w-3.5 h-3.5 text-brand-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
               </svg>
-              <span>app.walletix.pe/panel-principal</span>
+              <span>pierochlz.github.io/walletix-web</span>
             </div>
             <div class="text-xs text-slate-400 font-medium flex items-center gap-2">
               <span class="w-2 h-2 rounded-full bg-brand-green"></span>
-              <span>En vivo</span>
+              <span>Vista previa</span>
             </div>
           </div>
 
           <!-- Contenido dinámico según Tab -->
-          <div class="p-4 sm:p-8 bg-slate-950/90 min-h-[420px] text-slate-100">
+          <div class="p-4 sm:p-8 bg-brand-darkest/90 min-h-[420px] text-slate-100">
             
             <!-- TAB 1: COMPARATIVA DE FLUJOS (FIGMA EXACTO) -->
             <div id="tab-content-flujos" class="tab-panel space-y-6">
@@ -493,16 +529,16 @@
                   <div class="w-full h-44 relative">
                     <svg class="w-full h-full" viewBox="0 0 500 150" fill="none">
                       <!-- Grid horizontal -->
-                      <line x1="0" y1="30" x2="500" y2="30" stroke="#334155" stroke-dasharray="3 3" opacity="0.4"/>
-                      <line x1="0" y1="80" x2="500" y2="80" stroke="#334155" stroke-dasharray="3 3" opacity="0.4"/>
-                      <line x1="0" y1="130" x2="500" y2="130" stroke="#334155" stroke-dasharray="3 3" opacity="0.4"/>
+                      <line x1="0" y1="30" x2="500" y2="30" stroke="#26364a" stroke-dasharray="3 3" opacity="0.4"/>
+                      <line x1="0" y1="80" x2="500" y2="80" stroke="#26364a" stroke-dasharray="3 3" opacity="0.4"/>
+                      <line x1="0" y1="130" x2="500" y2="130" stroke="#26364a" stroke-dasharray="3 3" opacity="0.4"/>
                       <!-- Línea de Ingresos (Verde) -->
-                      <path d="M 30 110 Q 250 85 470 20" stroke="#22C55E" stroke-width="4" fill="none"/>
+                      <path d="M 30 110 Q 250 85 470 20" stroke="#7bd8b1" stroke-width="4" fill="none"/>
                       <!-- Línea de Egresos (Roja) -->
-                      <path d="M 30 125 Q 250 100 470 120" stroke="#EF4444" stroke-width="3" fill="none"/>
+                      <path d="M 30 125 Q 250 100 470 120" stroke="#ffb4ab" stroke-width="3" fill="none"/>
                       <!-- Puntos destacados -->
-                      <circle cx="470" cy="20" r="5" fill="#22C55E"/>
-                      <circle cx="470" cy="120" r="4" fill="#EF4444"/>
+                      <circle cx="470" cy="20" r="5" fill="#7bd8b1"/>
+                      <circle cx="470" cy="120" r="4" fill="#ffb4ab"/>
                     </svg>
                   </div>
                   <div class="flex justify-between text-xs text-slate-400 mt-2 font-mono">
@@ -517,12 +553,12 @@
                   <div class="bg-brand-surface/70 rounded-xl p-4 border border-white/10">
                     <p class="text-xs text-slate-400 uppercase font-semibold">Ingreso Medio Mensual</p>
                     <p class="text-2xl font-extrabold text-white mt-1">S/ 1,916.67</p>
-                    <p class="text-xs text-brand-green mt-1">↗ +36.1% comparado al trimestre anterior</p>
+                    <p class="text-xs text-brand-green mt-1">Promedio de los últimos 3 meses</p>
                   </div>
                   <div class="bg-brand-surface/70 rounded-xl p-4 border border-white/10">
                     <p class="text-xs text-slate-400 uppercase font-semibold">Gasto Medio Controlado</p>
                     <p class="text-2xl font-extrabold text-slate-200 mt-1">S/ 1,350.00</p>
-                    <p class="text-xs text-emerald-400 mt-1">✓ Dentro del tope sugerido de S/ 1,500</p>
+                    <p class="text-xs text-brand-green mt-1">✓ Dentro del tope sugerido de S/ 1,500</p>
                   </div>
                 </div>
               </div>
@@ -545,14 +581,14 @@
                       <td class="py-3 px-3 text-slate-200">S/ 2,450.00</td>
                       <td class="py-3 px-3 text-rose-300">S/ 1,250.00</td>
                       <td class="py-3 px-3 text-brand-green font-bold">+S/ 1,200.00</td>
-                      <td class="py-3 px-3"><span class="px-2 py-1 rounded bg-emerald-500/10 text-emerald-400 text-xs font-semibold">★ Excelente</span></td>
+                      <td class="py-3 px-3"><span class="px-2 py-1 rounded bg-brand-green/10 text-brand-green text-xs font-semibold">★ Excelente</span></td>
                     </tr>
                     <tr>
                       <td class="py-3 px-3 text-slate-300">Febrero 2025</td>
                       <td class="py-3 px-3 text-slate-200">S/ 1,800.00</td>
                       <td class="py-3 px-3 text-rose-300">S/ 1,600.00</td>
                       <td class="py-3 px-3 text-brand-green font-semibold">+S/ 200.00</td>
-                      <td class="py-3 px-3"><span class="px-2 py-1 rounded bg-blue-500/10 text-blue-400 text-xs font-semibold">Dentro de lo previsto</span></td>
+                      <td class="py-3 px-3"><span class="px-2 py-1 rounded bg-brand-blue/10 text-brand-blue text-xs font-semibold">Dentro de lo previsto</span></td>
                     </tr>
                   </tbody>
                 </table>
@@ -584,7 +620,7 @@
                   </div>
                   <div class="flex justify-between text-xs text-slate-400">
                     <span>73.5% del total</span>
-                    <span class="text-emerald-400">Cobrado puntual el 28</span>
+                    <span class="text-brand-green">Cobrado puntual el 28</span>
                   </div>
                 </div>
 
@@ -626,7 +662,7 @@
                     <span class="text-sm font-bold text-slate-300">S/ 620 / S/ 800 (77%)</span>
                   </div>
                   <div class="w-full bg-slate-800 h-2.5 rounded-full overflow-hidden">
-                    <div class="bg-emerald-500 h-full w-[77%]"></div>
+                    <div class="bg-brand-green h-full w-[77%]"></div>
                   </div>
                   <span class="text-[11px] text-slate-400 mt-1 block">Estado óptimo: Quedan S/ 180 para los próximos 7 días</span>
                 </div>
@@ -673,7 +709,7 @@
             <span class="w-12 h-12 rounded-2xl bg-white/10 text-white font-extrabold text-xl flex items-center justify-center border border-white/10">01</span>
             <h3 class="text-xl font-bold text-white">Crea tu cuenta gratis</h3>
             <p class="text-sm text-slate-300 leading-relaxed">
-              Regístrate con tu correo o Google en 30 segundos. Configura tu moneda principal (PEN o USD) y tus objetivos financieros iniciales.
+              Regístrate con tu correo en un minuto y crea tu primera meta de ahorro.
             </p>
           </div>
 
@@ -682,7 +718,7 @@
             <span class="w-12 h-12 rounded-2xl bg-brand-blue/20 text-brand-cyan font-extrabold text-xl flex items-center justify-center border border-brand-blue/30">02</span>
             <h3 class="text-xl font-bold text-white">Registra y categoriza</h3>
             <p class="text-sm text-slate-300 leading-relaxed">
-              Ingresa tus movimientos o programa gastos fijos. Walletix agrupa automáticamente tus egresos y activa las alertas presupuestales.
+              Anota tus ingresos y gastos con su categoría. Walletix los suma por categoría y te avisa si superas un presupuesto.
             </p>
           </div>
 
@@ -691,7 +727,7 @@
             <span class="w-12 h-12 rounded-2xl bg-brand-green/20 text-brand-green font-extrabold text-xl flex items-center justify-center border border-brand-green/30">03</span>
             <h3 class="text-xl font-bold text-white">Ahorra y gana retos</h3>
             <p class="text-sm text-slate-300 leading-relaxed">
-              Supera desafíos semanales de ahorro, visualiza cómo crece tu fondo de emergencia y recibe recomendaciones basadas en tus hábitos.
+              Únete a retos, mira cómo avanzan tus metas en el panel y aprende con microlecciones.
             </p>
           </div>
 
@@ -714,15 +750,15 @@
               ¿Por qué Walletix supera las hojas de cálculo tradicionales?
             </h2>
             <p class="text-slate-300 text-base leading-relaxed">
-              Las libretas y hojas de Excel se abandonan a las dos semanas. Walletix está diseñado con psicología de hábitos y micro-recompensas para mantenerte motivado y consistente.
+              Las libretas y hojas de cálculo suelen abandonarse pronto. Walletix usa retos, niveles y medallas para mantenerte motivado y constante.
             </p>
 
             <div class="space-y-4 pt-2">
               <div class="flex items-start gap-3">
                 <div class="w-6 h-6 rounded-full bg-brand-green/20 text-brand-green flex items-center justify-center shrink-0 mt-0.5">✓</div>
                 <div>
-                  <h4 class="text-white font-bold text-sm">Ahorro de hasta 4 horas al mes</h4>
-                  <p class="text-xs text-slate-400">Olvídate de cuadrar fórmulas manuales o perder tickets de compra.</p>
+                  <h4 class="text-white font-bold text-sm">Todo en un solo lugar</h4>
+                  <p class="text-xs text-slate-400">Sin fórmulas manuales: tu saldo, presupuestos y metas se calculan solos.</p>
                 </div>
               </div>
 
@@ -730,15 +766,15 @@
                 <div class="w-6 h-6 rounded-full bg-brand-green/20 text-brand-green flex items-center justify-center shrink-0 mt-0.5">✓</div>
                 <div>
                   <h4 class="text-white font-bold text-sm">Erradicación de gastos hormiga</h4>
-                  <p class="text-xs text-slate-400">Detecta consumos que parecen invisibles pero que representan hasta el 25% de tu sueldo.</p>
+                  <p class="text-xs text-slate-400">Detecta las compras pequeñas (menos de S/ 10) que se acumulan sin que lo notes.</p>
                 </div>
               </div>
 
               <div class="flex items-start gap-3">
                 <div class="w-6 h-6 rounded-full bg-brand-green/20 text-brand-green flex items-center justify-center shrink-0 mt-0.5">✓</div>
                 <div>
-                  <h4 class="text-white font-bold text-sm">Privacidad blindada</h4>
-                  <p class="text-xs text-slate-400">Tus datos nunca se venden ni se comparten con entidades publicitarias.</p>
+                  <h4 class="text-white font-bold text-sm">Tus datos protegidos</h4>
+                  <p class="text-xs text-slate-400">Contraseñas cifradas con BCrypt y cada usuario solo ve sus propios datos.</p>
                 </div>
               </div>
             </div>
@@ -753,51 +789,42 @@
             </div>
           </div>
 
-          <!-- Testimonios de Usuarios Reales -->
+          <!-- Perfiles de usuario (User Persona del informe): necesidad y qué parte de Walletix la resuelve -->
           <div class="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
-            
-            <div class="glass-card rounded-2xl p-6 space-y-4">
+            <p class="sm:col-span-2 text-xs font-bold uppercase tracking-widest text-slate-400">Pensado para</p>
+            <div class="glass-card rounded-2xl p-6 space-y-3">
               <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-full bg-emerald-600 font-bold flex items-center justify-center text-white">AR</div>
+                <div class="w-10 h-10 rounded-full bg-brand-green/20 text-brand-green font-bold flex items-center justify-center" aria-hidden="true">FR</div>
                 <div>
-                  <p class="text-sm font-bold text-white">Alex Romero</p>
-                  <p class="text-xs text-slate-400">Diseñador UX / Freelance</p>
+                  <p class="text-sm font-bold text-white">Freelancer con ingresos variables</p>
+                  <p class="text-xs text-slate-400">Perfil de usuario</p>
                 </div>
               </div>
-              <p class="text-xs text-slate-300 italic leading-relaxed">
-                "Con los ingresos variables de freelance siempre me costaba saber cuánto podía gastar en el mes. La comparativa de flujos de Walletix me dio tranquilidad total."
-              </p>
-              <div class="text-amber-400 text-xs">★★★★★</div>
+              <p class="text-xs text-slate-300 leading-relaxed">Necesita saber cuánto puede gastar cuando sus ingresos cambian cada mes.</p>
+              <p class="text-xs text-brand-green font-semibold">→ Comparativo de ingresos vs gastos</p>
             </div>
-
-            <div class="glass-card rounded-2xl p-6 space-y-4">
+            <div class="glass-card rounded-2xl p-6 space-y-3">
               <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-full bg-blue-600 font-bold flex items-center justify-center text-white">VC</div>
+                <div class="w-10 h-10 rounded-full bg-brand-blue/20 text-brand-blue font-bold flex items-center justify-center" aria-hidden="true">ES</div>
                 <div>
-                  <p class="text-sm font-bold text-white">Valeria Castro</p>
-                  <p class="text-xs text-slate-400">Estudiante Universitaria</p>
+                  <p class="text-sm font-bold text-white">Estudiante universitario</p>
+                  <p class="text-xs text-slate-400">Perfil de usuario</p>
                 </div>
               </div>
-              <p class="text-xs text-slate-300 italic leading-relaxed">
-                "Los retos como '7 días sin delivery' son súper adictivos. Logré ahorrar mis primeros S/ 600 para un curso sin sentir que me estaba privando de todo."
-              </p>
-              <div class="text-amber-400 text-xs">★★★★★</div>
+              <p class="text-xs text-slate-300 leading-relaxed">Quiere ahorrar para un curso sin dejar de salir con sus amigos.</p>
+              <p class="text-xs text-brand-green font-semibold">→ Metas de ahorro y retos</p>
             </div>
-
-            <div class="glass-card rounded-2xl p-6 space-y-4 sm:col-span-2">
+            <div class="glass-card rounded-2xl p-6 space-y-3 sm:col-span-2">
               <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-full bg-purple-600 font-bold flex items-center justify-center text-white">MP</div>
+                <div class="w-10 h-10 rounded-full bg-brand-warning/20 text-brand-warning font-bold flex items-center justify-center" aria-hidden="true">PJ</div>
                 <div>
-                  <p class="text-sm font-bold text-white">Martín Paredes</p>
-                  <p class="text-xs text-slate-400">Ingeniero de Software</p>
+                  <p class="text-sm font-bold text-white">Profesional joven</p>
+                  <p class="text-xs text-slate-400">Perfil de usuario</p>
                 </div>
               </div>
-              <p class="text-xs text-slate-300 italic leading-relaxed">
-                "La interfaz es limpia, rápida y sin saturación. La regla 50/30/20 adaptada en tiempo real funciona perfecto para mantener a raya los límites presupuestales."
-              </p>
-              <div class="text-amber-400 text-xs">★★★★★</div>
+              <p class="text-xs text-slate-300 leading-relaxed">Busca una vista clara para no pasarse de sus presupuestos.</p>
+              <p class="text-xs text-brand-green font-semibold">→ Presupuestos con alertas</p>
             </div>
-
           </div>
 
         </div>
@@ -834,7 +861,7 @@
             </svg>
           </a>
         </div>
-        <p class="text-xs text-slate-400">Sin tarjeta de crédito requerida • Cancela o exporta tus datos cuando quieras</p>
+        <p class="text-xs text-slate-400">Sin tarjeta de crédito • 100% gratis</p>
 
       </div>
     </section>
@@ -975,8 +1002,7 @@
         <!-- Columna 1: Brand e Información General -->
         <div class="lg:col-span-2 space-y-4">
           <a href="#inicio" class="flex items-center gap-3">
-            <img src="assets/walletix-logo.png" alt="Walletix Logo" class="w-9 h-9 rounded-full object-contain shadow-glow-green/20" />
-            <span class="text-xl font-black tracking-wider text-white">WALLETIX</span>
+            <span class="w-9 h-9 rounded-xl bg-brand-deep flex items-center justify-center shrink-0 shadow-glow-green/20" aria-hidden="true"><svg viewBox="0 0 24 24" class="w-5 h-5" fill="#ffffff"><path d="M21 18v1c0 1.1-.9 2-2 2H5c-1.11 0-2-.9-2-2V5c0-1.1.89-2 2-2h14c1.1 0 2 .9 2 2v1h-9c-1.11 0-2 .9-2 2v8c0 1.1.89 2 2 2h9zm-9-2h10V8H12v8zm4-2.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg></span><span class="text-xl font-bold tracking-tight text-white">Walletix</span>
           </a>
           <p class="text-xs text-slate-400 leading-relaxed max-w-sm">
             Plataforma de gestión financiera personal basada en la arquitectura oficial de Walletix. 
@@ -1023,93 +1049,15 @@
 
       <!-- Copyright y Créditos Académicos -->
       <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs gap-4">
-        <p>© 2026 Walletix Inc. Todos los derechos reservados.</p>
+        <p>© 2026 Walletix. Todos los derechos reservados.</p>
         <a href="https://pierochlz.github.io/walletix-web/terms" class="text-brand-green hover:underline font-semibold">Términos y Condiciones</a>
-        <p class="text-slate-500">
+        <p class="text-slate-400">
           Proyecto: <span class="text-slate-300 font-semibold">Walletix - Arquitectura de Aplicaciones</span> • Diseño Frontend Responsive
         </p>
       </div>
 
     </div>
   </footer>
-
-  <!-- =========================================================================
-       10. MODAL INTERACTIVO PARA LOGIN / DEMO (UX POLISHED)
-       ========================================================================= -->
-  <div id="authModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-fadeIn">
-    <div class="bg-brand-surface border border-white/15 rounded-3xl p-6 sm:p-8 max-w-md w-full relative shadow-2xl text-slate-100">
-      
-      <!-- Botón de Cerrar Modal -->
-      <button onclick="closeModal()" aria-label="Cerrar ventana" class="absolute top-5 right-5 text-slate-400 hover:text-white p-1 rounded-lg focus:outline-none">
-        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-        </svg>
-      </button>
-
-      <!-- Encabezado Modal inspirado en Figma Login -->
-      <div class="text-center mb-6 space-y-2">
-        <div class="w-12 h-12 rounded-xl bg-brand-green/20 text-brand-green flex items-center justify-center mx-auto mb-3">
-          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/>
-            <path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/>
-            <path d="M18 12a2 2 0 0 0 0 4h4v-4Z"/>
-          </svg>
-        </div>
-        <h3 id="modalTitle" class="text-2xl font-bold text-white">Iniciar Sesión en Walletix</h3>
-        <p id="modalSubtitle" class="text-xs text-slate-300">Bienvenido de vuelta, ingresa tus credenciales para acceder al panel.</p>
-      </div>
-
-      <!-- Formulario Login Modal -->
-      <form onsubmit="handleModalSubmit(event)" class="space-y-4">
-        <div>
-          <label class="block text-xs font-semibold text-slate-300 mb-1" for="modalEmail">Correo Electrónico</label>
-          <input 
-            type="email" 
-            id="modalEmail" 
-            required 
-            placeholder="ejemplo@correo.com" 
-            value="alex.romero@walletix.pe"
-            class="w-full px-4 py-2.5 rounded-xl bg-brand-card border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-brand-green text-sm"
-          />
-        </div>
-
-        <div>
-          <label class="block text-xs font-semibold text-slate-300 mb-1" for="modalPass">Contraseña</label>
-          <input 
-            type="password" 
-            id="modalPass" 
-            required 
-            placeholder="••••••••" 
-            value="demo123456"
-            class="w-full px-4 py-2.5 rounded-xl bg-brand-card border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-brand-green text-sm"
-          />
-        </div>
-
-        <div class="flex items-center justify-between text-xs text-slate-400">
-          <label class="flex items-center gap-2 cursor-pointer">
-            <input type="checkbox" checked class="rounded border-slate-700 text-brand-green focus:ring-brand-green" />
-            <span>Recordarme</span>
-          </label>
-          <a href="#contacto" onclick="closeModal()" class="text-brand-cyan hover:underline">¿Olvidaste tu contraseña?</a>
-        </div>
-
-        <button type="submit" class="w-full py-3 rounded-full bg-brand-green text-brand-darkest font-bold text-sm hover:shadow-glow-green transition-all mt-2">
-          Acceder al Dashboard
-        </button>
-
-        <button type="button" onclick="handleGoogleDemo()" class="w-full py-3 rounded-full bg-white text-slate-900 font-semibold text-xs hover:bg-slate-100 transition-all flex items-center justify-center gap-2 border border-slate-200 mt-2">
-          <svg class="w-4 h-4" viewBox="0 0 24 24">
-            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
-            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
-          </svg>
-          <span>Continuar con Google</span>
-        </button>
-      </form>
-
-    </div>
-  </div>
 
   <!-- =========================================================================
        11. JAVASCRIPT: MICRO-INTERACCIONES Y CONTROL DE INTERFAZ
@@ -1161,35 +1109,6 @@
       }
     }
 
-    // Modal de Login y Demo
-    const authModal = document.getElementById('authModal');
-    const modalTitle = document.getElementById('modalTitle');
-    const modalSubtitle = document.getElementById('modalSubtitle');
-
-    function openModal(type) {
-      if (type === 'demo') {
-        modalTitle.textContent = "Probar Demo Interactiva";
-        modalSubtitle.textContent = "Acceso instantáneo con el perfil demo de Alex Romero (S/ 2,450.00 de balance activo).";
-      } else {
-        modalTitle.textContent = "Iniciar Sesión en Walletix";
-        modalSubtitle.textContent = "Bienvenido de vuelta, ingresa tus credenciales para acceder al panel.";
-      }
-      authModal.classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeModal() {
-      authModal.classList.add('hidden');
-      document.body.style.overflow = 'auto';
-    }
-
-    // Cerrar modal al hacer clic fuera del contenido
-    authModal.addEventListener('click', (e) => {
-      if (e.target === authModal) {
-        closeModal();
-      }
-    });
-
     // Formulario de contacto: arma un correo (mailto:) para walletix.soporte@gmail.com
     // y lo abre en la aplicación de correo del visitante. La landing no guarda ni envía datos por sí sola.
     const CORREO_SOPORTE = 'walletix.soporte@gmail.com';
@@ -1210,20 +1129,6 @@
       document.getElementById('formSuccess').classList.remove('hidden');
     }
 
-
-    // Simulación de Login en el Modal
-    function handleModalSubmit(e) {
-      e.preventDefault();
-      alert("¡Autenticación completada con éxito! Redirigiendo al Panel Principal de Walletix...");
-      closeModal();
-      window.location.hash = "showcase";
-    }
-
-    function handleGoogleDemo() {
-      alert("Conectando con Google Identity Services... Acceso concedido como Alex Romero.");
-      closeModal();
-      window.location.hash = "showcase";
-    }
 
     // Control de Sombreado Activo en la Barra de Navegación (Click y Scroll)
     const navPills = document.querySelectorAll('.nav-pill');
